@@ -8,13 +8,10 @@ $usuario = getenv("MYSQL_USER");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Index pruebas");
+inicioCuerpo("Pruebas Basicas");
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
-
-
-
 
 
 
@@ -25,11 +22,8 @@ function cabecera() {}
 function cuerpo()
 {
 ?>
-    <br><br>
-    Hola, estás en Index.php
+  asdfasdf
 
-    <br>
-    <a href="./basicas.php">Acceso a Basicas</a>
 
 <?php
 }
