@@ -9,3 +9,8 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - 8085:80
+    environment:
+      XDEBUG_CONFIG: "main_defaults"
+      XDEBUG_MODE: "debug"
+      XDEBUG_SESSION: "1"
+  
