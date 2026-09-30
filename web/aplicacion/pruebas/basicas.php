@@ -157,7 +157,13 @@ if($var==1){
 
 }
 
-switch()
+switch($var){
+
+    case 1: $cadena="uno"; break;
+    case 1: $cadena="uno"; break;
+    defautl: $cadena = "otro";
+
+}
 
 ?>
 
