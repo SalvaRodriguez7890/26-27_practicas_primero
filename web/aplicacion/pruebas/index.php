@@ -30,6 +30,7 @@ function cuerpo()
 
     <br>
     <a href="./basicas.php">Acceso a Basicas</a>
-
+    <br>
+    <a href="./pasopar.php">Comunicacion Controlador-Vista</a>
 <?php
 }

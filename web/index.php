@@ -26,9 +26,10 @@ function cabecera()
 function cuerpo()
 {
 ?>
-    <br>
-    <button>Prueba de boton</button>
+    
 
     <a href="./aplicacion/pruebas/index.php">Acceso a pruebas</a>
+    <br>
+    
 <?php
 }
