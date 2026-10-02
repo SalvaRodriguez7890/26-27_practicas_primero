@@ -15,15 +15,17 @@ finCuerpo();
 
 //vista
 function cabecera() 
-{}
+{
+    ?>
+    <!--Comentario-->
+
+    <?php
+}
 
 //vista
 function cuerpo()
 {
 ?>
-    <br><br>
-    Hola, estás en Index.php
-
     <br>
     <button>Prueba de boton</button>
 
