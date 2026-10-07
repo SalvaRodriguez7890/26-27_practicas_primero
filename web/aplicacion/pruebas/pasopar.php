@@ -21,7 +21,7 @@ $otras=rellenarOtras();
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Index pruebas");
+inicioCuerpo("Index pruebas",[]);
 cuerpo($basicos, $otras);  //llamo a la vista
 finCuerpo();
 // **********************************************************

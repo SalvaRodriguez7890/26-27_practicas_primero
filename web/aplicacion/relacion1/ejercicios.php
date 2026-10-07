@@ -8,7 +8,7 @@ $usuario=getenv("MYSQL_USER");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 1");
+inicioCuerpo("Relacion de Ejercicios 1", []);
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -34,7 +34,7 @@ function cuerpo()
     visualización de las mismas)-->
     <br>
     <H1>Ejer1.Ejemplo de Funciones matemáticas</H1>
-    <p>La funcion round() sirve para redondear un numero decimal por ejemplo:</p>
+    <p>-La funcion round() sirve para redondear un numero decimal por ejemplo:</p>
     
     <?php
     $var1= round(3.6);
@@ -42,7 +42,13 @@ function cuerpo()
     $var1= round(3.4);
     echo "<p> Si redondeamos 3.4 nos debe dar 3, ya que siendo menor que 0.5 redondea abajo por lo tanto si mostramos la variable \$var1 obtendremos: $var1</p>";
     
+    ?>
+    <p> -La funcion floor() sirve para redondear un numero decima SIEMPRE hacia abajo</p>
+    <p> Sin importar si supera el 0.5 o no por ejemplo: </p>
+    <?php
+    $var1= floor(3.6);
+    echo "<p> Si aplicamos floor a 3.6 nos debe dar 3, por lo tanto si mostramos la variable \$var1 obtendremos: $var1</p>";
+    $var1= floor(3.4);
+    echo "<p> Si aplicamos floor a 3.4 nos debe dar 3, ya que siempre redondea hacia abajo por lo tanto si mostramos la variable \$var1 obtendremos: $var1</p>";
     
-
-
 }
