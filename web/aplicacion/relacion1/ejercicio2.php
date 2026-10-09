@@ -3,13 +3,21 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
 $usuario=getenv("MYSQL_USER");
+$arrayDado = [
+    "Numero 1" => 0,
+    "Numero 2" => 0,
+    "Numero 3" => 0,
+    "Numero 4" => 0,
+    "Numero 5" => 0,
+    "Numero 6" => 0
+];
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo();  //llamo a la vista
+cuerpo($arrayDado);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -20,7 +28,7 @@ function cabecera()
 }
 
 //vista
-function cuerpo()
+function cuerpo(array $arrayDado)
 {
  ?>
     <!--2.- Simular el lanzamiento de un dado (6 veces) (usar un bucle for, mt_rand con parametros). Además
@@ -36,16 +44,13 @@ function cuerpo()
     <p>Vamos a crear una variable llamada $var1, y dentro de un bucle le vamos a dar cada valos usando mt_rand(1,6) y lo vamos a mostar, de forma que 
         cada vuelta es una tirada del dado, podremos elegir cuantas veces queremos tirar el dado
     </p>
-        <form method="POST" action="">
-            <input type="number" id="num" name="num">
-            <button id="boton">tirar</button>
-        </form>
+       
     <?php
 
-    $var1 = (int)$_POST['num'];
+    
     
 
-    lanzamientoDado($var1);
+    lanzamientoDado($arrayDado);
 
 
 }
@@ -56,20 +61,14 @@ function cuerpo()
  * @param [type] Number
  * @return void
  */
-function lanzamientoDado(int $tiradas){
+function lanzamientoDado(array $arrayDado){
 
     $cont = 1;
 
 
-    echo "<p> Hemos tirado el dado $tiradas veces";
+    echo "<p> Hemos tirado el dado 6 veces";
     $var2 = 0;
-    
-    $num1 = 0;
-    $num2 = 0;
-    $num3 = 0;
-    $num4 = 0;
-    $num5 = 0;
-    $num6 = 0;
+ 
 
     do{
 
@@ -79,23 +78,23 @@ function lanzamientoDado(int $tiradas){
 
     switch($var2){
 
-    case 1: $num1 +=1; break;
-    case 2: $num2 +=1; break;
-    case 3: $num3 +=1; break;
-    case 4: $num4 +=1; break;
-    case 5: $num5 +=1; break;
-    default : $num6 +=1;
+    case 1: $arrayDado["Numero 1"] +=1; break;
+    case 2: $arrayDado["Numero 2"] +=1; break;
+    case 3: $arrayDado["Numero 3"] +=1; break;
+    case 4: $arrayDado["Numero 4"] +=1; break;
+    case 5: $arrayDado["Numero 5"] +=1; break;
+    default : $arrayDado["Numero 6"] +=1;
     }
     $cont += 1;
-    }while($cont <= $tiradas);
+    }while($cont <= 6);
+
+
     
-    echo "<p><strong>El 1 a salido $num1 veces</strong></p>";
-    echo "<p><strong>El 2 a salido $num2 veces</strong></p>";
-    echo "<p><strong>El 3 a salido $num3 veces</strong></p>";
-    echo "<p><strong>El 4 a salido $num4 veces</strong></p>";
-    echo "<p><strong>El 5 a salido $num5 veces</strong></p>";
-    echo "<p><strong>El 6 a salido $num6 veces</strong></p>";
-
-
+    echo "<p><strong>El 1 ha salido {$arrayDado['Numero 1']} veces</strong></p>";
+    echo "<p><strong>El 2 ha salido {$arrayDado['Numero 2']} veces</strong></p>";
+    echo "<p><strong>El 3 ha salido {$arrayDado['Numero 3']} veces</strong></p>";
+    echo "<p><strong>El 4 ha salido {$arrayDado['Numero 4']} veces</strong></p>";
+    echo "<p><strong>El 5 ha salido {$arrayDado['Numero 5']} veces</strong></p>";
+    echo "<p><strong>El 6 ha salido {$arrayDado['Numero 6']} veces</strong></p>";
 
 }
