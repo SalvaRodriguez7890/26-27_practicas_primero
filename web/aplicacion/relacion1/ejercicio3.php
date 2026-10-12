@@ -48,8 +48,8 @@ function cuerpo($array1, $array2, $array3, $array)
 
 <?php
 
-    echo "<p>Rellenando con varias sentencias</p>";
-
+    echo "<p>Rellenando con varias sentencias el array1</p>";
+    
    //Añadir a los index 1, 16 y 54
    $array1[1] = "Pera";
    $array1[16] = "Salva";
@@ -65,7 +65,13 @@ function cuerpo($array1, $array2, $array3, $array)
    //añadimos el ultimo array
    $array1["ultima"] = $array;
 
-   echo "<p>Rellenando con una sentencia</p>";
+   echo "<p>Mostrando el array1:</p>";
+
+        foreach ($array1 as $elementos) {
+        echo $elementos." - ";
+        }
+
+   echo "<p>Rellenando con una sentencia el array2</p>";
     $array2 = array(
                     1 => "Pera",
                     16 => "Manzana",
@@ -76,6 +82,13 @@ function cuerpo($array1, $array2, $array3, $array)
                     "ultima" => array(1, 34, "nueva")
                 );
 
+    echo "<p>Mostrando el array2:</p>";
+
+        foreach ($array2 as $elementos) {
+        echo $elementos." - ";
+        }
+
+    echo "<p>Rellenando con una sentencia con el [] el array3</p>";
     //Una sola sentencia con []
     $array3 = [
                 1 => "Pera",
@@ -87,5 +100,10 @@ function cuerpo($array1, $array2, $array3, $array)
                 "ultima" => [1, 34, "nueva"]
             ];
 
+    echo "<p>Mostrando el array3:</p>";
+
+        foreach ($array3 as $elementos) {
+        echo $elementos." - ";
+        }
 
 }
