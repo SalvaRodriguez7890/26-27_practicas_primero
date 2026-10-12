@@ -40,26 +40,11 @@ controlador)
 
 <?php
 
-    echo "Mostrando indices y valores del array \$vector con el foreach(\$array as \$indice => \$valor)";
-        foreach ($vector as $indice => $valor){
-
-            echo "<br>Valor: <strong>".$valor."</strong> cuyo indice es: <strong>".$indice."</strong>";
-
-        }
-
-    echo "<br><br>Funcionamiento de foreach usando array_keys y array_values";
-        //Las funciones array_keys y array_value te sacan un array con las "keys" quen o indices del array a elegir
-        //y array_value te saca el valor que hay dentro de cada index por lo que creamos dos array a partir de estos
-        $claves = array_keys($vector);
-        $valores = array_values($vector);
-
-        //Simulamos el funcionamiento del foreach usando un for normal para sacar los indices y las claves
-        for ($i = 0; $i < count($vector); $i++) {
-            // Obtenemos la clave y el valor usando la misma posición numérica $i
-            $indice = $claves[$i];
-            $valor = $valores[$i];
-            
-            echo "<br>Valor: <strong>".$valor."</strong> cuyo indice es: <strong>".$indice."</strong>";
-        }
-
+    echo "<strong>Fecha en formato 'd/m/y'</strong>";
+    echo "<br>".date("d/m/y");
+    echo "<br><strong>Fecha en largo </strong>";
+    $fechaLarga = new IntlDateFormatter(
+    'es_ES',  
+    "'Dia' d, 'mes' MMMM, 'año' yyyy, 'dia de la semana' EEEE"
+);  echo "<br>".$fechaLarga->format(time());
 }
