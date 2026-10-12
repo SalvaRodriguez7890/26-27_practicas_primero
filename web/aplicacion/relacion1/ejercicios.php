@@ -8,7 +8,7 @@ $usuario=getenv("MYSQL_USER");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 1");
+inicioCuerpo("Relacion de Ejercicios 1", []);
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -22,27 +22,27 @@ function cabecera()
 //vista
 function cuerpo()
 {
- ?>
-    <!--1.- Mostrar el funcionamiento de diversas funciones Matemáticas 
-    (round, floor, pow, sqrt, entero a hexadecimal, de base 4 a base 8 y al 
-    menos dos funciones mas distintas de las anteriores) (buscar la información 
-    sobre las funciones matemáticas en http://php.net/manual/es/book.math.php). 
-    Definir variables inicializadas con valores en binario, octal y hexadecimal. 
-    Mostrar el valor de esas variables tanto en decimal como en la base en la que se 
-    han definido.
-    Hacer este ejercicio directamente en la vista (definiciones de las variables y 
-    visualización de las mismas)-->
+ 
+    ?>
+    
+    Ejercicios:
     <br>
-    <H1>Ejer1.Ejemplo de Funciones matemáticas</H1>
-    <p>La funcion round() sirve para redondear un numero decimal por ejemplo:</p>
+    <br>
+    <a href="./ejercicio1.php">Ejercicio 1</a>
+    <br>
+    <a href="./ejercicio2.php">Ejercicio 2</a>
+    <br>
+    <a href="./ejercicio3.php">Ejercicio 3</a>
+    <br>
+    <a href="./ejercicio4.php">Ejercicio 4</a>
+    <br>
+    <a href="./ejercicio5.php">Ejercicio 5</a>
+    <br>
+    <a href="./ejercicio6.php">Ejercicio 6</a>
+    <br>
+    <a href="./ejercicio7.php">Ejercicio 7</a>
+    <br>
+<?php
     
-    <?php
-    $var1= round(3.6);
-    echo "<p> Si redondeamos 3.6 nos debe dar 4, por lo tanto si mostramos la variable \$var1 obtendremos: $var1</p>";
-    $var1= round(3.4);
-    echo "<p> Si redondeamos 3.4 nos debe dar 3, ya que siendo menor que 0.5 redondea abajo por lo tanto si mostramos la variable \$var1 obtendremos: $var1</p>";
-    
-    
-
-
+     
 }

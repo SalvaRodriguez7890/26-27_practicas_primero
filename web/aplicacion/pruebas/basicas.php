@@ -1,14 +1,23 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
-
+$barra=[
+    [
+    "TEXTO"=>"inicio",
+    "ENLACE"=>"/index.php",
+        ],
+    [
+    "TEXTO"=>"pruebas",
+    "ENLACE"=>"/aplicacion/pruebas/basicas.php",
+    ]
+];
 $usuario = getenv("MYSQL_USER");
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Pruebas Basicas");
+inicioCuerpo("Pruebas Basicas", $barra);        
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -88,7 +97,7 @@ $var="hola".$aux;
 $aux=true;
 $var="hola".$aux;
 $aux=[];
-$var="hola".$aux;
+//$var="hola".$aux;
 $aux="adios";
 $var="hola".$aux;
 
