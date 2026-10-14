@@ -68,6 +68,11 @@ function cuerpo($array1, $array2, $array3, $array)
    echo "<p>Mostrando el array1:</p>";
 
         foreach ($array1 as $elementos) {
+        // si es un array 
+        if(is_array($elementos)){
+
+            echo "[" . implode(", ", $elementos) . "] - ";
+        }
         echo $elementos." - ";
         }
 
@@ -85,7 +90,7 @@ function cuerpo($array1, $array2, $array3, $array)
     echo "<p>Mostrando el array2:</p>";
 
         foreach ($array2 as $elementos) {
-        echo $elementos." - ";
+        echo $elementos . " - ";
         }
 
     echo "<p>Rellenando con una sentencia con el [] el array3</p>";

@@ -38,6 +38,8 @@ El array se definirá en el controlador y se realizarán las operaciones en la v
 
 <?php
 
+//si usamos while tenemos que resetar el array con reset($array)
+
     echo "Mostrando indices y valores del array \$vector con el foreach(\$array as \$indice => \$valor)";
         foreach ($vector as $indice => $valor){
 
