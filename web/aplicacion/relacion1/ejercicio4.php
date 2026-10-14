@@ -40,7 +40,7 @@ Los datos se definirán en el controlador y se visualizarán en la vista.-->
 
 echo "Generando el array (reyenandolo)";
 
-$fila=5;
+$fila=6;
 
 //Uso dos bucles for
 //El primer bucle marca el numero a escribir

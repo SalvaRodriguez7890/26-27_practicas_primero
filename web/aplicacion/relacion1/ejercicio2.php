@@ -97,4 +97,7 @@ function lanzamientoDado(array $arrayDado){
     echo "<p><strong>El 5 ha salido {$arrayDado['Numero 5']} veces</strong></p>";
     echo "<p><strong>El 6 ha salido {$arrayDado['Numero 6']} veces</strong></p>";
 
+   
+
+
 }
