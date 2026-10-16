@@ -94,12 +94,49 @@ espacio en blanco) por "/mujer "-->
     echo "<strong>Con mb_substring</strong><br>".PHP_EOL;
     for ($i = 0; $i < $longitudCadena; $i++){
             
-        for($j=0 ; $j <= $i; $j++ ){
+        for($j=0 ; $j < $i; $j++ ){
             echo  "&nbsp;&nbsp;".PHP_EOL;
 
         }
         echo mb_substr($cadena, $i,1)." <br>".PHP_EOL;
     }
+
+    
+    //orden inverso
+
+    echo "<strong>Con mb_substring INVERSO</strong><br>".PHP_EOL;
+    for ($i = 1; $i <= $longitudCadena; $i++){
+            
+        for($j=1 ; $j < $i; $j++ ){
+            echo  "&nbsp;&nbsp;".PHP_EOL;
+
+        }
+
+        if($i%2==0){
+            //strtoupper para poner en mayuscula la letra que cae en index par
+         echo strtoupper(mb_substr($cadena, -$i,1))." <br>".PHP_EOL;
+
+        }else{
+
+             echo strtolower(mb_substr($cadena, -$i,1))." <br>".PHP_EOL;
+
+        }       
+    }
+
+
+    //Añadiendo mujer despues de niña
+    
+     echo "<strong>Añadiendo mujer despues de niña</strong><br>".PHP_EOL;
+
+     //sacamos la posicion de niña y como niña mide 7 pues le sumo 7
+     //para saber hasta donde tengo de limite para escribir mujer
+    $posicion = strpos($cadena," niña") + 7;
+    
+
+    echo substr_replace($cadena, "mujer", $posicion,0)."<br>".PHP_EOL;
+
+   
+
 
 
 
