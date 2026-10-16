@@ -23,25 +23,53 @@ function cabecera()
 function cuerpo()
 {
  ?>
-    <!--1.- Mostrar el funcionamiento de diversas funciones Matemáticas 
-    (round, floor, pow, sqrt, entero a hexadecimal, de base 4 a base 8 y al 
-    menos dos funciones mas distintas de las anteriores) (buscar la información 
-    sobre las funciones matemáticas en http://php.net/manual/es/book.math.php). 
-    Definir variables inicializadas con valores en binario, octal y hexadecimal. 
-    Mostrar el valor de esas variables tanto en decimal como en la base en la que se 
-    han definido.
-    Hacer este ejercicio directamente en la vista (definiciones de las variables y 
-    visualización de las mismas)-->
-    <br>
-    <H1>Ejer1.Ejemplo de Funciones matemáticas</H1>
-    <p> <strong>-La funcion round() sirve para redondear un numero decimal por ejemplo:</strong></p>
-    
+    <!--1.- Escribe distintas cadenas usando “, ‘, HEREDOC y NOWDOC incluyendo variables,
+    etiquetas html y caracteres especiales como ‘, “, á, é, ñ. Muestra las cadenas y comprueba que
+    el código fuente es legible (no se tiene una sola línea con todo seguido). Haz que se muestren
+    las etiquetas html (no se ejecuten)-->    
     <?php
 
+    //Variables
+    $nombre = "Salva";
+    $edad = "26";
 
-    
+    //Cadenas Con "" y ''
+
+    $cadena1 = "Me llamo: $nombre \n";
+    $cadena2 = 'Mi edad es: '.$edad."\n";
+
+    //Usando heredoc
+
+    $heredoc1 = <<<texto
+    Nombre: $nombre <br />
+    Edad: $edad <br />
+    Demás -> $cadena1   <br />
+    Demás2 -> $cadena2  <br />
+    texto;
+
+    //Usando NOWDOC
+
+    $heredoc2 = <<<'texto'
+    Nombre: $nombre <br />
+    Edad: $edad <br />
+    Demás -> $cadena1   <br />
+    Demás2 -> $cadena2  <br />
+    texto;
 
 
 
+
+    echo "<strong>Variables </strong><br>".PHP_EOL;
+    echo "$nombre <br>".PHP_EOL;
+    echo "$edad <br>".PHP_EOL;
+
+    echo "<strong>Cadenas con \"\" y '' </strong><br>".PHP_EOL;
+    echo "$cadena1 <br>".PHP_EOL;
+    echo "$cadena2 <br>".PHP_EOL;
+
+    echo "<strong>Cadenas HEREDOC </strong><br>".PHP_EOL;
+    echo "$heredoc1 <br>".PHP_EOL;
+    echo "<strong>Cadenas NOWDOC </strong><br>".PHP_EOL;
+    echo "$heredoc2 <br>".PHP_EOL;
 
 }
