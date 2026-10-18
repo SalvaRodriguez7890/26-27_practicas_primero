@@ -2,13 +2,8 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
- $arrayCaracteres = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-                    ];
- $cadena = "";
- $longitudCadena = 20;
- $numAleatorio = 0;
+$var1 = 17.5 ;
+$var2 = 379987.24;
 
 $usuario=getenv("MYSQL_USER");
 
@@ -16,8 +11,8 @@ $usuario=getenv("MYSQL_USER");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo($cadena, $longitudCadena, $arrayCaracteres, $numAleatorio);  //llamo a la vista
+inicioCuerpo("Relacion de Ejercicios 2", []);
+cuerpo($var1, $var2);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -28,7 +23,7 @@ function cabecera()
 }
 
 //vista
-function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
+function cuerpo($var1, $var2)
 {
  ?>
     <!-- 4.- Tengo unas variables con valores 17.5 (float), 379987.24 (float)
@@ -40,46 +35,18 @@ function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
    
     //Con un array
 
-    echo "<strong>A) Usando un array con los valores de los caracteres</strong><br>".PHP_EOL;
-
-    //Se dan las 20 vueltas que queremos de cadena
-    for ($i = 0; $i < $longitudCadena; $i++){
-        
-        $numAleatorio = rand(0,(count($arrayCaracteres)-1));
-        $cadena .= $arrayCaracteres[$numAleatorio];
-    }
+    echo "<strong>Formateando los valores 17.5 y 379987.24.</strong><br>".PHP_EOL;    
     echo "<br>".PHP_EOL;
-    echo "<strong>Cadena Generada: </strong><br>".$cadena.PHP_EOL;
-    echo "<strong><br>Logintud: </strong>".strlen($cadena).PHP_EOL;
+    $num1_formateado = number_format($var1, 1, ',', '.'); //nos da 17,5
+    $num2_formateado = number_format($var2, 2, ',', '.'); //Nos da 379.987,24   
+    echo "<strong>Formato nuevo: </strong> $num1_formateado y $num2_formateado<br>".PHP_EOL;    
     echo "<br>".PHP_EOL;
 
-
-    //Con tabla ascic usando chr()
-    //Se reinicia la cadena
-    //el rango de caracteres es -> A = 65 y Z = 90
-    //el rango de caracteres es -> a = 97 y z = 122
-
-    $cadena = "";
-    echo "<br><strong>B) Usando los valores de la tabla ASCIC</strong><br>".PHP_EOL;
-   
-
-    $i = 0;
-    //Se dan las 20 vueltas que queremos de cadena
-    while ($i < $longitudCadena){
-        
-    //Generamos el numero aleatorio entre 65 y 122
-        $numAleatorio = rand(65,122);
-
-        //si ese número generado NO esta dentro del rango de los caracteres no permitidos
-        //se añade a la cadena y la $i se incrementa, si no se vuelve a generar un numero
-        if(!($numAleatorio > 90 && $numAleatorio < 97)){
-            $cadena .= chr($numAleatorio);
-            $i++;
-        }
-    }
+    echo "<strong>Formateando los valores 17,5 y 379.987,24 .</strong><br>".PHP_EOL;    
     echo "<br>".PHP_EOL;
-    echo "<strong>Cadena Generada: </strong><br>".$cadena.PHP_EOL;
-    echo "<br><strong>Logintud: </strong>".strlen($cadena).PHP_EOL;
+    $num1_final= str_pad($num1_formateado, 15, '0', STR_PAD_LEFT);
+    $num2_final = str_pad($num2_formateado, 15, ' ', STR_PAD_LEFT);  
+    echo "<strong>Formato nuevo: </strong> $num1_final y $num2_final<br>".PHP_EOL;    
 
    
 }
