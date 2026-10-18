@@ -2,24 +2,17 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
+ $cadena = "Está la niña en casa";
+ $longitudCadena = strlen($cadena);
+
 $usuario=getenv("MYSQL_USER");
-
-$array1 = [];
-$array2 = [];
-$array3 = [];
-
-$array = [
-    1,
-    34,
-    "nueva"
-];
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo($array1, $array2, $array3, $array);  //llamo a la vista
+cuerpo($cadena, $longitudCadena);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -30,85 +23,83 @@ function cabecera()
 }
 
 //vista
-function cuerpo($array1, $array2, $array3, $array)
+function cuerpo($cadena, $longitudCadena)
 {
  ?>
-    <!--3.- Se quiere:
-        a) Crear una variable de tipo array.
-        b) Rellenar las posiciones 1, 16, 54 con valores cualquiera.
-        c) Añadir el valor 34 al final
-        d) Añadir los valores “cadena”, true, 1.345 en las posiciones “uno”, “dos” y “tres”
-        e) Rellenar la posición “ultima” con el array (1,34,”nueva”);
-        - Hacer lo anterior creando y rellenando el array usando varias sentencias.
-        - Hacer lo anterior usando una sola sentencia con array;
-        - Hacer lo anterior usando una sola sentencia con []
-        - Recorrer los tres arrays usando foreach mostrando todos los valores de los arrays creados
-        Los arrays se definirán en el controlador y se visualizarán en la vista.-->
+    <!--2.- Dada la cadena "Está la niña en casa" se pide:
+- Mostrar cada carácter en una línea separada y con tantos espacios en blanco como me
+indica la posición del carácter mostrado. (quedaría algo así)
+NOTA: prueba si puedes hacerlo con [] para obtener los caracteres correctos. Prueba si
+puedes hacerlo con substr para obtener los caracteres correctos. Prueba si puedes
+hacerlo con mb_substr para obtener los caracteres correctos. Comenta las formas no
+válidas para que pueda comprobar que lo has hecho.
+E
+s
+ t
+ á
 
+ l
+ a
 
-<?php
+ n
+ i
+ ñ
+ a
 
-    echo "<p>Rellenando con varias sentencias el array1</p>";
-    
-   //Añadir a los index 1, 16 y 54
-   $array1[1] = "Pera";
-   $array1[16] = "Salva";
-   $array1[54] = true;
-   //para la posicioon final no le indico index
-   $array1[] = 34;
-    
-   //añadimos "cadena", true, 1.345 en las posciiones que nos indica
-   $array1["uno"] = "cadena";
-   $array1["dos"]= true;
-   $array1["tres"] = 1.345;
+ e
+ n
 
-   //añadimos el ultimo array
-   $array1["ultima"] = $array;
+ c
+ a
+ s
+ a
+- Mostrar la cadena en orden inverso, (usar índices negativos, no invertir la cadena)
+con cada carácter en una línea distinta y con los espacios en blanco
+correspondientes (desde 0 hasta n espacios en blanco), los caracteres pares en
+mayúscula (0, 2, …) y los impares en minúscula (1, 3, 5, …), y extrayendo los
+caracteres con mb_substr.
+- Separa la cadena en partes usando el carácter a, y mostrar cada parte en una línea
+distinta
+- Localiza en la cadena la palabra niña y cambia el siguiente carácter a niña (el
+espacio en blanco) por "/mujer "-->    
+    <?php
+   
 
-   echo "<p>Mostrando el array1:</p>";
+    //Recorremos la cadena dos veces con un bucle for y vamos mostrando
 
-        foreach ($array1 as $elementos) {
-        // si es un array 
-        if(is_array($elementos)){
+    echo "<strong>Con []</strong><br>".PHP_EOL;
+    for ($i = 0; $i < $longitudCadena; $i++){
+        
+        for($j=0 ; $j <= $i; $j++ ){
+            echo  "&nbsp;&nbsp;".PHP_EOL;
 
-            echo "[" . implode(", ", $elementos) . "] - ";
         }
-        echo $elementos." - ";
+        echo $cadena[$i]." <br>".PHP_EOL;
+    }
+
+    //Recorremos la cadena igual que antes pero con substr()
+
+    echo "<strong>Con substring</strong><br>".PHP_EOL;
+    for ($i = 0; $i < $longitudCadena; $i++){
+            
+        for($j=0 ; $j <= $i; $j++ ){
+            echo  "&nbsp;&nbsp;".PHP_EOL;
+
         }
+        echo substr($cadena, $i,1)." <br>".PHP_EOL;
+    }
 
-   echo "<p>Rellenando con una sentencia el array2</p>";
-    $array2 = array(
-                    1 => "Pera",
-                    16 => "Manzana",
-                    54 => "Plátano",
-                    "uno" => "cadena",
-                    "dos" => true,
-                    "tres" => 1.345,
-                    "ultima" => array(1, 34, "nueva")
-                );
+     //Recorremos la cadena igual que antes pero con substr()
 
-    echo "<p>Mostrando el array2:</p>";
+    echo "<strong>Con mb_substring</strong><br>".PHP_EOL;
+    for ($i = 0; $i < $longitudCadena; $i++){
+            
+        for($j=0 ; $j <= $i; $j++ ){
+            echo  "&nbsp;&nbsp;".PHP_EOL;
 
-        foreach ($array2 as $elementos) {
-        echo $elementos . " - ";
         }
+        echo mb_substr($cadena, $i,1)." <br>".PHP_EOL;
+    }
 
-    echo "<p>Rellenando con una sentencia con el [] el array3</p>";
-    //Una sola sentencia con []
-    $array3 = [
-                1 => "Pera",
-                16 => "Manzana",
-                54 => "Plátano",
-                "uno" => "cadena",
-                "dos" => true,
-                "tres" => 1.345,
-                "ultima" => [1, 34, "nueva"]
-            ];
-
-    echo "<p>Mostrando el array3:</p>";
-
-        foreach ($array3 as $elementos) {
-        echo $elementos." - ";
-        }
-
+   
 }
