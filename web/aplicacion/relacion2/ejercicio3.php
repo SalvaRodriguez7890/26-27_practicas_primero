@@ -2,24 +2,22 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
+ $arrayCaracteres = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                    ];
+ $cadena = "";
+ $longitudCadena = 20;
+ $numAleatorio = 0;
+
 $usuario=getenv("MYSQL_USER");
-
-$array1 = [];
-$array2 = [];
-$array3 = [];
-
-$array = [
-    1,
-    34,
-    "nueva"
-];
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo($array1, $array2, $array3, $array);  //llamo a la vista
+cuerpo($cadena, $longitudCadena, $arrayCaracteres, $numAleatorio);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -30,85 +28,61 @@ function cabecera()
 }
 
 //vista
-function cuerpo($array1, $array2, $array3, $array)
+function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
 {
  ?>
-    <!--3.- Se quiere:
-        a) Crear una variable de tipo array.
-        b) Rellenar las posiciones 1, 16, 54 con valores cualquiera.
-        c) Añadir el valor 34 al final
-        d) Añadir los valores “cadena”, true, 1.345 en las posiciones “uno”, “dos” y “tres”
-        e) Rellenar la posición “ultima” con el array (1,34,”nueva”);
-        - Hacer lo anterior creando y rellenando el array usando varias sentencias.
-        - Hacer lo anterior usando una sola sentencia con array;
-        - Hacer lo anterior usando una sola sentencia con []
-        - Recorrer los tres arrays usando foreach mostrando todos los valores de los arrays creados
-        Los arrays se definirán en el controlador y se visualizarán en la vista.-->
-
-
+    <!-- 3.- Genera una cadena aleatoria de 20 caracteres (los caracteres permitidos son letras
+            minúsculas, letras mayúsculas y números)
+            
+            a) A partir de un array en el que están todos los caracteres posibles que cumplen la
+            condición. (tienes que rellenar el array con todos los caracteres validos)
+            
+            b) A partir del código ASCII (se puede indicar un rango mayor y eliminar aquellos
+            caracteres que no lo cumplan).-->    
 <?php
+   
+    //Con un array
 
-    echo "<p>Rellenando con varias sentencias el array1</p>";
-    
-   //Añadir a los index 1, 16 y 54
-   $array1[1] = "Pera";
-   $array1[16] = "Salva";
-   $array1[54] = true;
-   //para la posicioon final no le indico index
-   $array1[] = 34;
-    
-   //añadimos "cadena", true, 1.345 en las posciiones que nos indica
-   $array1["uno"] = "cadena";
-   $array1["dos"]= true;
-   $array1["tres"] = 1.345;
+    echo "<strong>A) Usando un array con los valores de los caracteres</strong><br>".PHP_EOL;
 
-   //añadimos el ultimo array
-   $array1["ultima"] = $array;
+    //Se dan las 20 vueltas que queremos de cadena
+    for ($i = 0; $i < $longitudCadena; $i++){
+        
+        $numAleatorio = rand(0,(count($arrayCaracteres)-1));
+        $cadena .= $arrayCaracteres[$numAleatorio];
+    }
+    echo "<br>".PHP_EOL;
+    echo "<strong>Cadena Generada: </strong><br>".$cadena.PHP_EOL;
+    echo "<strong><br>Logintud: </strong>".strlen($cadena).PHP_EOL;
+    echo "<br>".PHP_EOL;
 
-   echo "<p>Mostrando el array1:</p>";
 
-        foreach ($array1 as $elementos) {
-        // si es un array 
-        if(is_array($elementos)){
+    //Con tabla ascic usando chr()
+    //Se reinicia la cadena
+    //el rango de caracteres es -> A = 65 y Z = 90
+    //el rango de caracteres es -> a = 97 y z = 122
 
-            echo "[" . implode(", ", $elementos) . "] - ";
+    $cadena = "";
+    echo "<br><strong>B) Usando los valores de la tabla ASCIC</strong><br>".PHP_EOL;
+   
+
+    $i = 0;
+    //Se dan las 20 vueltas que queremos de cadena
+    while ($i < $longitudCadena){
+        
+    //Generamos el numero aleatorio entre 65 y 122
+        $numAleatorio = rand(65,122);
+
+        //si ese número generado NO esta dentro del rango de los caracteres no permitidos
+        //se añade a la cadena y la $i se incrementa, si no se vuelve a generar un numero
+        if(!($numAleatorio > 90 && $numAleatorio < 97)){
+            $cadena .= chr($numAleatorio);
+            $i++;
         }
-        echo $elementos." - ";
-        }
+    }
+    echo "<br>".PHP_EOL;
+    echo "<strong>Cadena Generada: </strong><br>".$cadena.PHP_EOL;
+    echo "<br><strong>Logintud: </strong>".strlen($cadena).PHP_EOL;
 
-   echo "<p>Rellenando con una sentencia el array2</p>";
-    $array2 = array(
-                    1 => "Pera",
-                    16 => "Manzana",
-                    54 => "Plátano",
-                    "uno" => "cadena",
-                    "dos" => true,
-                    "tres" => 1.345,
-                    "ultima" => array(1, 34, "nueva")
-                );
-
-    echo "<p>Mostrando el array2:</p>";
-
-        foreach ($array2 as $elementos) {
-        echo $elementos . " - ";
-        }
-
-    echo "<p>Rellenando con una sentencia con el [] el array3</p>";
-    //Una sola sentencia con []
-    $array3 = [
-                1 => "Pera",
-                16 => "Manzana",
-                54 => "Plátano",
-                "uno" => "cadena",
-                "dos" => true,
-                "tres" => 1.345,
-                "ultima" => [1, 34, "nueva"]
-            ];
-
-    echo "<p>Mostrando el array3:</p>";
-
-        foreach ($array3 as $elementos) {
-        echo $elementos." - ";
-        }
-
+   
 }

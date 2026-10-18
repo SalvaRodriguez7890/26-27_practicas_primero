@@ -2,16 +2,17 @@
 include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
-$usuario=getenv("MYSQL_USER");
+$var1 = 17.5 ;
+$var2 = 379987.24;
 
-$arrayPiramide =[];
+$usuario=getenv("MYSQL_USER");
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo($arrayPiramide);  //llamo a la vista
+inicioCuerpo("Relacion de Ejercicios 2", []);
+cuerpo($var1, $var2);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -22,46 +23,30 @@ function cabecera()
 }
 
 //vista
-function cuerpo($arrayPiramide)
+function cuerpo($var1, $var2)
 {
  ?>
-<!--4- Generar un array con los siguientes valores mostrándolos posteriormente con foreach. El array se
-debe generar usando bucles for.
-1
-2 2
-3 3 3
-4 4 4 4
-5 5 5 5 5
-Declarar la constante FILAS que se rellenará con el número de filas que se deben crear. Repetir
-lo anterior usando FILAS para crear el array y visualizarlo.
-Los datos se definirán en el controlador y se visualizarán en la vista.-->
-
+    <!-- 4.- Tengo unas variables con valores 17.5 (float), 379987.24 (float)
+            Mostrarlas de forma que resulte "el primer valor -0000000000017,5-, el segundo valor -
+            379.987,24-" (usar number format para obtener el formateo de los números, los números se
+            muestran con 15 caracteres en total, el primero relleno con 0 y el segundo con espacios-debe
+            aparecer el espacio))-->    
 <?php
+   
+    //Con un array
 
-echo "Generando el array (reyenandolo)";
+    echo "<strong>Formateando los valores 17.5 y 379987.24.</strong><br>".PHP_EOL;    
+    echo "<br>".PHP_EOL;
+    $num1_formateado = number_format($var1, 1, ',', '.'); //nos da 17,5
+    $num2_formateado = number_format($var2, 2, ',', '.'); //Nos da 379.987,24   
+    echo "<strong>Formato nuevo: </strong> $num1_formateado y $num2_formateado<br>".PHP_EOL;    
+    echo "<br>".PHP_EOL;
 
-$fila=6;
+    echo "<strong>Formateando los valores 17,5 y 379.987,24 .</strong><br>".PHP_EOL;    
+    echo "<br>".PHP_EOL;
+    $num1_final= "-".str_pad($num1_formateado, 15, '0', STR_PAD_LEFT)."-";
+    $num2_final = "-".str_pad($num2_formateado, 15, ' ', STR_PAD_LEFT)."-";  
+    echo "<strong>Formato nuevo: </strong> $num1_final y $num2_final<br>".PHP_EOL;    
 
-//Uso dos bucles for
-//El primer bucle marca el numero a escribir
-for ($i=1; $i<=$fila; $i++){
-    //inicializo primero la posicion donde en el segundo bucle vamos a meter los datos
-    //ya que si no lo hacia la linea 55 (la concatenacion) me daba error.
-    $arrayPiramide[$i]= "";
-    //En el segundo marco las veces que se repite ese numero en cada hueco del array
-    for($j=1; $j<=$i; $j++){
-
-        //al hueco del array le concateno con el .= el valor de $i en ese momento
-        $arrayPiramide[$i].= $i;
-    };
-
-};
-
-echo "<br> Mostrando array:";
-
-
-foreach ($arrayPiramide as $elementos) {
-        echo "<br>".$elementos;
-        }
-     
+   
 }
