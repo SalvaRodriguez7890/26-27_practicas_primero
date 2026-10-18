@@ -123,6 +123,25 @@ espacio en blanco) por "/mujer "-->
         }       
     }
 
+    //Se parando la cadena segun el caracter a
+
+    //Variable a
+    $a = "t";
+    $cadena = "Está la niña en casa";
+     echo "<strong>Separando la cadena segun el caracter \"a\"<strong><br>".PHP_EOL;
+    for ($i = 0; $i <= $longitudCadena; $i++){
+
+        $a = mb_substr($cadena, $i,1);
+
+        echo $a.PHP_EOL;
+
+        if($a === "a"){
+             echo  "<br>".PHP_EOL;
+        }
+        
+    }
+    echo "<br>".PHP_EOL;
+
 
     //Añadiendo mujer despues de niña
     
