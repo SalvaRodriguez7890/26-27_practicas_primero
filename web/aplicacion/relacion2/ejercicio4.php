@@ -44,8 +44,8 @@ function cuerpo($var1, $var2)
 
     echo "<strong>Formateando los valores 17,5 y 379.987,24 .</strong><br>".PHP_EOL;    
     echo "<br>".PHP_EOL;
-    $num1_final= str_pad($num1_formateado, 15, '0', STR_PAD_LEFT);
-    $num2_final = str_pad($num2_formateado, 15, ' ', STR_PAD_LEFT);  
+    $num1_final= "-".str_pad($num1_formateado, 15, '0', STR_PAD_LEFT)."-";
+    $num2_final = "-".str_pad($num2_formateado, 15, ' ', STR_PAD_LEFT)."-";  
     echo "<strong>Formato nuevo: </strong> $num1_final y $num2_final<br>".PHP_EOL;    
 
    
