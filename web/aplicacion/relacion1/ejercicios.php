@@ -4,11 +4,30 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 
 $usuario=getenv("MYSQL_USER");
 
-//dibuja la plantilla de la vista
-inicioCabecera("APLICACION PRIMER TRIMESTRE");
+// Barra de ubicación
+
+/**
+ * Cada elemento es un array de dos posiciones asociativas
+ * TEXTO: testo a mostrar en el elemento
+ * LINK: Enlace a la pagina. Si esta vaciono tiene enlace
+ */
+$barraUbi = [
+    [
+        "TEXTO"=>"Inicio",
+        "LINK" =>"/index.php"
+    ],
+    [
+        "TEXTO"=>"Relacion 1",
+        "LINK" =>""
+    ]
+];
+
+//dibuja la plantilla de vista
+inicioCabecera("RELACIÓN 1");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 1", []);
+
+inicioCuerpo("RELACIÓN 1",$barraUbi);
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
