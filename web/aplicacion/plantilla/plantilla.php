@@ -44,8 +44,13 @@ function inicioCabecera($titulo)
 function finCabecera()
 {
 ?>
+
     </head>
 <?php   
+
+
+
+
 }
 
 function inicioCuerpo(string $cabecera, array $ubicacion = [])
@@ -58,6 +63,10 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
         
             <header>
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
+                <a href="/index.php">
+                    <p>Voler a Inicio</p>
+                    <img id="fotoPuntoSeguro" src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
+                </a>
             </header>
             
             <div id="barraLogin">

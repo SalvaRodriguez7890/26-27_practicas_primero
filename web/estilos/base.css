@@ -17,6 +17,10 @@ body {
     height: 50px;
 }
 
+#fotoPuntoSeguro{
+    height: 50px;
+}
+
 #cabecera #titulo{
     font-size: 1.3em;
     font-style: italic;
