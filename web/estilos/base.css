@@ -1,99 +1,63 @@
 @charset "UTF8";
 
 body {
-    background-color: rgba(58, 155, 143, 0.781);
+    background-color: #2b7a70;
     font-size: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #2d3748;
+    margin: 0;
+    padding: 30px 0;
 }
 
-#documento{
+#documento {
     margin: 0 auto;
     width: 700px;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
-#cabecera{
-    padding: 5px;
+
+#cabecera {
+    padding: 10px 5px 15px 5px;
+    border-bottom: 2px solid #edf2f7;
 }
-#cabecera #logo{
+
+#cabecera #logo {
     width: 75px;
     height: 50px;
+    object-fit: contain;
 }
 
-#fotoPuntoSeguro{
+#fotoPuntoSeguro {
+    padding-bottom: 10%;
     height: 50px;
+    object-fit: contain;
 }
 
-#cabecera #titulo{
-    font-size: 1.3em;
+#cabecera #titulo {
+    font-size: 1.4em;
     font-style: italic;
+    font-weight: 600;
+    color: #1a202c;
+    letter-spacing: -0.5px;
 }
 
-#barraUbicacion{
-    padding: 5px;
+#barraUbicacion {
+    padding: 10px 5px;
+    font-size: 0.9em;
+    color: #718096;
 }
 
-#fotoPuntoSeguro{
-
-    
-
-}
-
-.boton{
-    color:white;
-    border:thin black solid;
-}
-
-.boton a{
-    text-decoration: none;
-    color:white;
-}
-
-.boton a:visited{
-    text-decoration: none;
-    color:white;
-}
-
-.boton a:hover{
-    color: black;
-}
-
-.boton:hover{
-    color: black;
-}
-
-.tabla{
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
-}
-
-.tabla th{
-    color: rgb(209, 209, 255);
-}
-.tabla tr.par{
-    background-color: black;
+.boton {
     color: white;
-    
-}
-
-.tabla tr.impar{
-    
-}
-
-#pie{
-    color: blue;
-    font-size: 1.5 em;
-    padding: 5px;
-}
-
-.for_texto{
-    border:blue thin solid;
-    background-color: white;
-    padding: 2px;
-    margin:2px;
-    border-radius: 4px;
-}
-.error{
-    background-color: white;
-    color:red;
-    border:thin solid red;
-    padding:5px;
+    background-color: #2b7a70;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
