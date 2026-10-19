@@ -42,10 +42,11 @@ function cuerpo()
 ?>
             <br>
                 <lu>
-                    <li><a href="/aplicacion/pruebas/basicas.php">Pruebas Básicas</a></li>
+                    <li><a href="/aplicacion/pruebas/index.php">Acceso a Pruebas</a></li>
                     <li><a href="/aplicacion/relacion1/ejercicios.php">Acceso a ejercicios Relacion 1</a></li>
                     <li><a href="/aplicacion/relacion1Corregida/index.php">Acceso a ejercicios Relacion 1 CORREGIDA</a></li>
                     <li><a href="/aplicacion/relacion2/ejercicios.php">Acceso a ejercicios Relacion 2</a></li>
+                    <li><a href="/aplicacion/relacion3/index_funciones.php">Acceso a ejercicios Relacion 3</a></li>
                     <li><a href="/aplicacion/expresionesRegulares/expresiones.php">Acceso a Expresiones Regularses (Ejemplos)</a></li>
                 </lu>
 

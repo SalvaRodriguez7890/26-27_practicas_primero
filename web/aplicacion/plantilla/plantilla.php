@@ -63,17 +63,17 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
 ?>
     <body>
         <div id="documento">
-        
-            <header>
-                <h1 id="titulo"><?php echo $cabecera;?></h1>
-              
-            </header>
             <div id="fotoPuntoSeguro" style="align-items: center;">
                 <a href="/index.php">
                             <p>Voler a Inicio</p>
                             <img  src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
                 </a>
-        </div>
+            </div>
+            <header>
+                <h1 id="titulo"><?php echo $cabecera;?></h1>
+              
+            </header>
+            
             <div id="barraLogin">
                 
             </div>
