@@ -1,5 +1,7 @@
 <?php
 
+
+
 function paginaError($mensaje)
 {
   header("HTTP/1.0 404 $mensaje");
@@ -28,6 +30,7 @@ function inicioCabecera($titulo)
             <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
 
         <title><?php echo $titulo ?></title>
+        
         <meta name="description" content="">
         <meta name="author" content="Administrador">
 
@@ -63,12 +66,14 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
         
             <header>
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
-                <a href="/index.php">
-                    <p>Voler a Inicio</p>
-                    <img id="fotoPuntoSeguro" src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
-                </a>
+              
             </header>
-            
+            <div id="fotoPuntoSeguro" style="align-items: center;">
+                <a href="/index.php">
+                            <p>Voler a Inicio</p>
+                            <img  src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
+                </a>
+        </div>
             <div id="barraLogin">
                 
             </div>
