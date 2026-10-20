@@ -17,18 +17,18 @@ $resultado = 0;
 // --- Buscar nombre ---
 $expNombre = "/S[a-z\ A-Z]*o/";
 preg_match($expNombre, $heredoc1, $resNombre, PREG_OFFSET_CAPTURE);
-$nombre = $resNombre[0][0] ?? '';
+$nombre = $resNombre[0][0];
 
 // --- Buscar numero (decimal o entero) ---
 $expNumero = "/\d+(\.\d+)?/";
 preg_match($expNumero, $heredoc1, $resNumero, PREG_OFFSET_CAPTURE);
-$numero = $resNumero[0][0] ?? '';
+$numero = $resNumero[0][0];
 
 // --- Buscar correos ---
 $expCorreo = '/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/';
 preg_match_all($expCorreo, $heredoc1, $resCorreo, PREG_OFFSET_CAPTURE);
-$correo1 = $resCorreo[0][0][0] ?? '';
-$correo2 = $resCorreo[0][1][0] ?? '';
+$correo1 = $resCorreo[0][0][0];
+$correo2 = $resCorreo[0][1][0];
 
 
 
