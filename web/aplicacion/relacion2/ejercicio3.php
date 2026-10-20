@@ -77,7 +77,9 @@ function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
 
         //si ese número generado NO esta dentro del rango de los caracteres no permitidos
         //se añade a la cadena y la $i se incrementa, si no se vuelve a generar un numero
-        if(!($numAleatorio > 90 && $numAleatorio < 97)){
+        if( ($numAleatorio >= 48 && $numAleatorio <= 57) || 
+            ($numAleatorio >= 65 && $numAleatorio <= 90) || 
+            ($numAleatorio >= 97 && $numAleatorio <= 122)){
             $cadena .= chr($numAleatorio);
             $i++;
         }
