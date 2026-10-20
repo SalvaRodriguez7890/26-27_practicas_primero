@@ -7,39 +7,28 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 
 $heredoc1 = <<<texto
     <h1>Nombre:</h1> Salvador Rodriguez Sojo 
-    <h2>Edad:</h2> 26 años 
+    <h2>Edad:</h2> 26.64 años 
     <h3>correo1</h3> correo@gmail.com  
     <h3>correo2</h3> correo@email.com 
     texto;
 
 $resultado = 0;
 
-//Buscar nombre
+// --- Buscar nombre ---
+$expNombre = "/S[a-z\ A-Z]*o/";
+preg_match($expNombre, $heredoc1, $resNombre, PREG_OFFSET_CAPTURE);
+$nombre = $resNombre[0][0] ?? '';
 
-//Empieza en S, luego que tenga a-z minus, con la bara \" " y un espacio los espacios y A-Z amyus
-$exp = '/S[a-z\ A-Z]*o/';
+// --- Buscar numero (decimal o entero) ---
+$expNumero = "/\d+(\.\d+)?/";
+preg_match($expNumero, $heredoc1, $resNumero, PREG_OFFSET_CAPTURE);
+$numero = $resNumero[0][0] ?? '';
 
-preg_match($exp, $heredoc1, $resultado, PREG_OFFSET_CAPTURE);
-
-$nombre = $resultado[0][0];
-
-//Buscar numero
-
-$exp = '/\d{2}/';
-
-preg_match($exp, $heredoc1, $resultado, PREG_OFFSET_CAPTURE);
-
-$numero = $resultado[0][0];
-
-
-//buscar correo
-$exp = '/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/';
-
-preg_match_all($exp, $heredoc1, $resultado, PREG_OFFSET_CAPTURE);
-
-$correo1 = $resultado[0][0][0];
-
-$correo2 = $resultado[0][1][0];
+// --- Buscar correos ---
+$expCorreo = '/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/';
+preg_match_all($expCorreo, $heredoc1, $resCorreo, PREG_OFFSET_CAPTURE);
+$correo1 = $resCorreo[0][0][0] ?? '';
+$correo2 = $resCorreo[0][1][0] ?? '';
 
 
 
