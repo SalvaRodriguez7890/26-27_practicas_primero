@@ -3,7 +3,6 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 //controlador
 
  $cadena = "Está la niña en casa";
- $longitudCadena = strlen($cadena);
 
 $usuario=getenv("MYSQL_USER");
 
@@ -12,7 +11,7 @@ inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion de Ejercicios 1", []);
-cuerpo($cadena, $longitudCadena);  //llamo a la vista
+cuerpo($cadena);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -23,7 +22,7 @@ function cabecera()
 }
 
 //vista
-function cuerpo($cadena, $longitudCadena)
+function cuerpo($cadena)
 {
  ?>
     <!--2.- Dada la cadena "Está la niña en casa" se pide:
@@ -68,7 +67,7 @@ espacio en blanco) por "/mujer "-->
     //Recorremos la cadena dos veces con un bucle for y vamos mostrando
 
     echo "<strong>Con []</strong><br>".PHP_EOL;
-    for ($i = 0; $i < $longitudCadena; $i++){
+    for ($i = 0; $i < strlen($cadena); $i++){
         
         for($j=0 ; $j <= $i; $j++ ){
             echo  "&nbsp;&nbsp;".PHP_EOL;
@@ -80,7 +79,7 @@ espacio en blanco) por "/mujer "-->
     //Recorremos la cadena igual que antes pero con substr()
 
     echo "<strong>Con substring</strong><br>".PHP_EOL;
-    for ($i = 0; $i < $longitudCadena; $i++){
+    for ($i = 0; $i < strlen($cadena); $i++){
             
         for($j=0 ; $j <= $i; $j++ ){
             echo  "&nbsp;&nbsp;".PHP_EOL;
@@ -92,7 +91,7 @@ espacio en blanco) por "/mujer "-->
      //Recorremos la cadena igual que antes pero con substr()
 
     echo "<strong>Con mb_substring</strong><br>".PHP_EOL;
-    for ($i = 0; $i < $longitudCadena; $i++){
+    for ($i = 0; $i < mb_strlen($cadena); $i++){
             
         for($j=0 ; $j < $i; $j++ ){
             echo  "&nbsp;&nbsp;".PHP_EOL;
@@ -105,7 +104,10 @@ espacio en blanco) por "/mujer "-->
     //orden inverso
 
     echo "<strong>Con mb_substring INVERSO</strong><br>".PHP_EOL;
-    for ($i = 1; $i <= $longitudCadena; $i++){
+
+    //se usa mb_strlen() ya que dará la longitud real de las cadenas
+    //si se usa strlen() normal sin el mb te dará una longitud mas larga
+    for ($i = 1; $i <= mb_strlen($cadena); $i++){
             
         for($j=1 ; $j < $i; $j++ ){
             echo  "&nbsp;&nbsp;".PHP_EOL;
@@ -129,7 +131,7 @@ espacio en blanco) por "/mujer "-->
     $a = "t";
     $cadena = "Está la niña en casa";
      echo "<strong>Separando la cadena segun el caracter \"a\"<strong><br>".PHP_EOL;
-    for ($i = 0; $i <= $longitudCadena; $i++){
+    for ($i = 0; $i <= mb_strlen($cadena); $i++){
 
         $a = mb_substr($cadena, $i,1);
 
@@ -149,10 +151,11 @@ espacio en blanco) por "/mujer "-->
 
      //sacamos la posicion de niña y como niña mide 7 pues le sumo 7
      //para saber hasta donde tengo de limite para escribir mujer
-    $posicion = strpos($cadena," niña") + 7;
+
+    $posicion = mb_strpos($cadena," niña") +7;
     
 
-    echo substr_replace($cadena, "mujer", $posicion,0)."<br>".PHP_EOL;
+    echo substr_replace($cadena, " mujer ", $posicion,0)."<br>".PHP_EOL;
 
    
 
