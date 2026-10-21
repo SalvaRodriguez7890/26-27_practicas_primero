@@ -237,6 +237,47 @@ function devuelve(int &$valor1, int $valor2=23, int $valor3 = 10):int|bool{
     
 }
 
-
+//Funcion arrow de prueba
 fn(int $a, int $b , ...$resto)=> ($a<100)?$a+$b:$a-$b;
+
+/**
+* 5.- Se tienen las funciones suma, resta y multiplicacion que reciben cada una dos parámetros numéricos (entero) y que 
+*devuelven el resultado de la operación que indica su nombre sobre los parámetros.
+*
+*Tenemos la Función hacerOperacion que recibe tres parámetros. El primero es una cadena que puede ser suma, resta o multiplicacion. 
+*Los otros dos son los operandos. Esta función se encargará de devolver el resultado de ejecutar la “cadena” con los operandos usando 
+*una variable-función para llamar a la operación. Hay que comprobar indicando una operación correcta (devuelve false si la operación no es válida).
+*
+*hacerOperacion(“resta”,3,1) //devuelve 3-1. No se llama directamente a la función resta, se tiene una variable función para ello
+*/
+
+//funcuiones muy simples que usara hacerOperacion()
+function suma(int $valor1, int $valor2):int{return $valor1+$valor2;}
+function resta(int $valor1, int $valor2):int{return $valor1-$valor2;}
+function multiplicacion(int $valor1, int $valor2):int{return $valor1*$valor2;}
+
+/**
+ * Funcion hacerOperacion
+ *
+ * @param string $cadena
+ * @param integer $valor1
+ * @param integer $valor2
+ * @return integer
+ */
+function hacerOperacion(string $cadena, int $valor1, int $valor2):int {
+    switch ($cadena) {
+        case "suma": 
+        case "resta": 
+        case "multiplicacion": 
+            //Con las $cadena hacemos referencia a la funcion de sumar restar o multiplicar
+            return $cadena($valor1, $valor2);
+        break;
+
+            //si no es ninguna devuelvo 0
+        default: 
+            return 0;
+        break;
+    }
+}
+
 
