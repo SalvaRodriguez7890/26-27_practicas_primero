@@ -41,6 +41,13 @@ function cabecera() {}
 function cuerpo()
 {
     
+//Vamos a probar a elegir la suma y como valores le voy a psar 1 / 1-1-1-1 nos deberia dar 4
+echo "<strong>Vamos a probar a elegir la suma y como valores le voy a psar 1 / 1-1-1-1 nos deberia dar 4</strong><br>".PHP_EOL;
+echo "<br>".PHP_EOL;
+$resultado = operaciones(1,1,1,1,1);
+
+echo "<br>El resultado de la funcion a sido: ".$resultado;
+
 
 
 

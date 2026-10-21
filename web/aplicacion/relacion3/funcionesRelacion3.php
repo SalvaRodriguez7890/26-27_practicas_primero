@@ -70,7 +70,7 @@ function cuantasVeces(array &$vector, string $cadena, float $numero, int &$numLl
  * @param [int] $longitud
  * @return string|bool
  */
-function generarCadena(int $longitud):string|bool{
+function generarCadena(int $longitud = 10):string|bool{
  $cadena = "";
 
     if($longitud <= 0){
@@ -112,6 +112,86 @@ function generarCadena(int $longitud):string|bool{
  *      Operaciones(1,2,5,7,3,4); //haría la suma de 2+5+7+3+4 
  *      Operaciones(5,2,5,7,3,4); //Sumaria suma las posiciones pares (5+3), las posiciones impares (2+7+4),  y se restan los dos. 
  */
+
+/**
+ * Funcion de operaciones
+ *
+ * @param integer $tipo
+ * @param float $valor2
+ * @param float $valor3
+ * @param array ...$demas
+ * @return int
+ */
+function operaciones(int $tipo, float $valor2, float $valor3, ...$demas) {
+    $resultado=0;
+    //voy a usar un switch para realizarlo
+    switch($tipo){
+
+    //si $tipo es 1 sumamos con un foreach iterando con $demas;
+        case 1:         
+            $resultado = $valor2 + $valor3;
+
+            foreach ($demas as $num) {
+                $resultado += $num;            
+            }
+    
+        break;
+    //si $tipo es 2 restamos uno a uno y con un foreach iterando con $demas;
+        case 2:        
+            //a resultado le doy el valor del primero
+            $resultado = $valor2;
+            foreach ($demas as $num) {
+                $resultado -= $num;            
+            }
+            
+        break;
+
+    //si $tipo es 3 multiplicamos todo
+        case 3:    
+            $resultado = $valor2 * $valor3;
+
+            foreach ($demas as $num) {
+                $resultado *= $num;            
+            }    
+            
+        break;
+    //Si se le pasa un tipo que no sea ni 1 2 o 3 pues hacemos lo que nos dice de los pares
+    //se suma las posiciones pares entre si, las posiciones impares entre si y se restan entre ellos
+        default: 
+        $sumaPar = 0;
+        $sumaImp = 0;
+        //recorro el array de argumentos
+
+        //El bucle empieza en 1 porque la posicion 0 es el tipo (no se tiene en cuenta en este caso)
+        for($i = 1; $i<func_num_args(); $i++){
+
+            //si el valor que hay en la posicion % 2 == 0 es par
+            //sumo a la variable de pares
+            if(func_get_arg($i)%2==0){
+                $sumaPar += func_get_arg($i);
+            }else{//Si no significa que es impar, lo sumo a la variable de impares
+                $sumaImp += func_get_arg($i);
+            }
+
+        }
+            $resultado = $sumaPar - $sumaImp;
+        ;
+        
+            
+
+    }//fin del swtich
+
+            return $resultado;
+
+
+}
+
+
+
+
+
+
+
 
 
 /**
@@ -156,3 +236,7 @@ function devuelve(int &$valor1, int $valor2=23, int $valor3 = 10):int|bool{
     }
     
 }
+
+
+fn(int $a, int $b , ...$resto)=> ($a<100)?$a+$b:$a-$b;
+
