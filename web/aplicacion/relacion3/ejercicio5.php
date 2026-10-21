@@ -75,7 +75,7 @@ echo "El resultado de \$vfSuma = \$suma(2,2): ".$vfSuma.PHP_EOL;
 echo "<br>".PHP_EOL;
 echo "El resultado de \$vfResta = \$resta(5,2): ".$vfReta.PHP_EOL;
 echo "<br>".PHP_EOL;
-echo "El resultado de \$vfMulti = \$multi(2,2): ".$vfMulti.PHP_EOL;
+echo "El resultado de \$vfMulti = \$multi(3,7): ".$vfMulti.PHP_EOL;
 
 
 }
