@@ -139,7 +139,7 @@ function operaciones(int $tipo, float $valor2, float $valor3, ...$demas) {
     //si $tipo es 2 restamos uno a uno y con un foreach iterando con $demas;
         case 2:        
             //a resultado le doy el valor del primero
-            $resultado = $valor2;
+            $resultado = $valor2 - $valor3;
             foreach ($demas as $num) {
                 $resultado -= $num;            
             }
