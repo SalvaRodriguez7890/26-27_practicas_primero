@@ -301,3 +301,29 @@ function hacerOperacion(string $cadena, int $valor1, int $valor2):int {
 function llamadaAFuncion(int $valor1, int $valor2, callable $funCallback):int{
             return $funCallback($valor1,$valor2);
 }
+
+
+/**
+ *7.- Función ordenar(): A esta función se le pasa un array y lo ordena mediante una llamada a usort,
+ *   al que se indicará como función callback una función anónima que ordenará en orden descendente
+ *   según el número de caracteres de cada elemento.
+ *   $vector=array((“uno”,“grande”,“caminos”,”a”)
+ *   Ordenar($vector);//el vector debe quedar (“caminos”,”grande”,”uno”,”a”)
+ */
+
+ /**
+  * Funcion para ordenar
+  *
+  * @param array $array
+  * @return void
+  */
+//Le pongo el & al array para que le cambie su valor y lo ordene, la funcion en si no devuelve nada
+function ordenar(array &$array):void{
+
+            //a la funcion usort le meto el $array y una funcion el cual con m_strlen ordenará
+    usort($array, function($a, $b) {
+        return mb_strlen($b) - mb_strlen($a); //orden descendente de mayor a menor cantidad de caracteres
+    });
+}
+
+

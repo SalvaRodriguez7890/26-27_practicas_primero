@@ -45,6 +45,9 @@ function cuerpo()
     <br>
     <a href="./ejercicio6.php">Ejercicio 6</a>
     <br>
+    <br>
+    <a href="./ejercicio7.php">Ejercicio 7</a>
+    <br>
     
 <?php
     

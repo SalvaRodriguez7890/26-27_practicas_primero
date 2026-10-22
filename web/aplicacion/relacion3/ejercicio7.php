@@ -41,41 +41,29 @@ function cabecera() {}
 function cuerpo()
 {
 echo "<br>".PHP_EOL;
-//Primero voy a probar que pasa si no le paso cadena
-echo "<strong>Vamos a probar la funcion hacerOperacion() la cual usa la variable-funcion dentro de la funcion hacerOperacion</strong><br>".PHP_EOL;
+//Le paso directamente a la funcion un array
+echo "<strong>Vamos a probar la funcion ordenar() la cual mediante una funcion anonima y usort ordenará el array</strong><br>".PHP_EOL;
 echo "<br>".PHP_EOL;
 
-//Para ello llamo a la funcion hacerOperacion 3 veces con 3 fvariables y le paso las variables
-$resultadoSuma = hacerOperacion("suma", 10, 1);
-$resultadoResta = hacerOperacion("resta", 10, 1);
-$resultadoMulti = hacerOperacion("multiplicacion", 10, 10);
+//Primero creo el array
+$arrayString = ["choches","uno","bicicleta", "Juan","choche"]; 
 
-echo "El resultado suma: ".$resultadoSuma.PHP_EOL;
+//lo muestro
+echo "\$arrayString sin ordenar: ".PHP_EOL;
 echo "<br>".PHP_EOL;
-echo "El resultado resta: ".$resultadoResta.PHP_EOL;
-echo "<br>".PHP_EOL;
-echo "El resultado multiplicacion: ".$resultadoMulti.PHP_EOL;
-
-//Ademas ahora vamos a probar a usar la varibles-funcion directamente con las fuinciones de suma, resta y multiplicacion
-
-$suma = "suma";
-$resta = "resta";
-$multi = "multiplicacion";
-
-$vfSuma = $suma(2,2);
-$vfReta = $resta(5,2);
-$vfMulti = $multi(3,7);
-
-echo "<br>".PHP_EOL;
-echo "<br>".PHP_EOL;
-echo "<strong>Ahora vamos a probar directamente las variables-funcion con tres variables con las funciones simples de suma-resta-multiplicacion:</strong><br>".PHP_EOL;
+//metodo print_r() muestra el array sin necesidad de echo
+print_r($arrayString);
 echo "<br>".PHP_EOL;
 
-echo "El resultado de \$vfSuma = \$suma(2,2): ".$vfSuma.PHP_EOL;
+//Ordeno el array con la funcion
+ordenar($arrayString);
+
 echo "<br>".PHP_EOL;
-echo "El resultado de \$vfResta = \$resta(5,2): ".$vfReta.PHP_EOL;
+echo "El resultado tras ordenar \$arrayString: ".PHP_EOL;
 echo "<br>".PHP_EOL;
-echo "El resultado de \$vfMulti = \$multi(3,7): ".$vfMulti.PHP_EOL;
+
+//metodo print_r() muestra el array sin necesidad de echo
+print_r($arrayString); 
 
 
 }
