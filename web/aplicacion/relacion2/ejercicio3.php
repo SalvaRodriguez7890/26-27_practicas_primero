@@ -6,6 +6,8 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
                     ];
+//$arrayCaracteres = str_split('abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTVWXYZ');
+
  $cadena = "";
  $longitudCadena = 20;
  $numAleatorio = 0;
@@ -48,7 +50,7 @@ function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
     //Se dan las 20 vueltas que queremos de cadena
     for ($i = 0; $i < $longitudCadena; $i++){
         
-        $numAleatorio = rand(0,(count($arrayCaracteres)-1));
+        $numAleatorio = mt_rand(0,(count($arrayCaracteres)-1));
         $cadena .= $arrayCaracteres[$numAleatorio];
     }
     echo "<br>".PHP_EOL;
@@ -75,7 +77,9 @@ function cuerpo($cadena, $longitudCadena, $arrayCaracteres,$numAleatorio)
 
         //si ese número generado NO esta dentro del rango de los caracteres no permitidos
         //se añade a la cadena y la $i se incrementa, si no se vuelve a generar un numero
-        if(!($numAleatorio > 90 && $numAleatorio < 97)){
+        if( ($numAleatorio >= 48 && $numAleatorio <= 57) || 
+            ($numAleatorio >= 65 && $numAleatorio <= 90) || 
+            ($numAleatorio >= 97 && $numAleatorio <= 122)){
             $cadena .= chr($numAleatorio);
             $i++;
         }

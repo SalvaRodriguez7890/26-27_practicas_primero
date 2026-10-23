@@ -30,19 +30,19 @@ function cuerpo()
     <?php
 
     //Variables
-    $nombre = "Salva";
-    $edad = "26";
+    $nombre = "Hola me llamo Salva";
+    $edad = "y tengo 26";
 
     //Cadenas Con "" y ''
 
-    $cadena1 = "Me llamo: $nombre \n";
+    $cadena1 = "Nombre: $nombre \n";
     $cadena2 = 'Mi edad es: '.$edad."\n";
 
     //Usando heredoc
 
     $heredoc1 = <<<texto
-    Nombre: $nombre <br />
-    Edad: $edad <br />
+    <h1>Nombre:</h1> $nombre <br />
+    <h1>Edad:</h1> $edad <br />
     Demás -> $cadena1   <br />
     Demás2 -> $cadena2  <br />
     texto;
@@ -50,8 +50,8 @@ function cuerpo()
     //Usando NOWDOC
 
     $heredoc2 = <<<'texto'
-    Nombre: $nombre <br />
-    Edad: $edad <br />
+    <h1>Nombre:</h1> $nombre <br />
+    <h1>Edad:</h1> $edad <br />
     Demás -> $cadena1   <br />
     Demás2 -> $cadena2  <br />
     texto;

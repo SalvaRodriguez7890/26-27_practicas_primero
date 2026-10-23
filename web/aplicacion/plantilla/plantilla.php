@@ -1,5 +1,7 @@
 <?php
 
+
+
 function paginaError($mensaje)
 {
   header("HTTP/1.0 404 $mensaje");
@@ -28,6 +30,7 @@ function inicioCabecera($titulo)
             <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
 
         <title><?php echo $titulo ?></title>
+        
         <meta name="description" content="">
         <meta name="author" content="Administrador">
 
@@ -44,8 +47,13 @@ function inicioCabecera($titulo)
 function finCabecera()
 {
 ?>
+
     </head>
 <?php   
+
+
+
+
 }
 
 function inicioCuerpo(string $cabecera, array $ubicacion = [])
@@ -55,27 +63,23 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
 ?>
     <body>
         <div id="documento">
-        
+            <div id="fotoPuntoSeguro" style="align-items: center;">
+                <a href="/index.php">
+                            <p>Voler a Inicio</p>
+                            <img  src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
+                </a>
+            </div>
             <header>
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
+              
             </header>
             
             <div id="barraLogin">
                 
             </div>
             <div id="barraMenu">
-                <ul>
-                    <li><a href="/index.php">Inicio</a></li>
-                    <li><a href="/aplicacion/pruebas/basicas.php">Pruebas Básicas</a></li>
-                    <li><a href="/aplicacion/relacion1/ejercicios.php">Acceso a ejercicios Relacion 1</a></li>
-                    <li><a href="/aplicacion/relacion1Corregida/index.php">Acceso a ejercicios Relacion 1 CORREGIDA</a></li>
-                    <li><a href="/aplicacion/relacion2/ejercicios.php">Acceso a ejercicios Relacion 2</a></li>
-                     <li><a href="/aplicacion/expresionesRegulares/expresiones.php">Acceso a Expresiones Regularses</a></li>
-                
-                
-                </ul> 
-                
-            </div id="barraUbicacion">
+                                
+            <div id="barraUbicacion">
                 <?php
                   
                 if($ubicacion){
@@ -103,6 +107,8 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
                 ?>
             
             <div>
+               
+                
 <?php   
 }
 
