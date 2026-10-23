@@ -193,7 +193,6 @@ function operaciones(int $tipo, float $valor2, float $valor3, ...$demas) {
 
 
 
-
 /**
 * 4.- Función devuelve(). Esta función recibe como parámetros tres números (enteros) y devuelve la suma de los tres valores en el primer parámetro y 
 *     como resultado de la función el producto de los tres valores. Los dos últimos parámetros tendrán definidos valor por defecto (el que queráis).
