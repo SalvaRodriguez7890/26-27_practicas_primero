@@ -46,7 +46,7 @@ function cabecera() {}
 function cuerpo($longitud, $cadena)
 {
     //generamos una cadena de 10 elementos
-    echo "<strong>Vamos a probar a generar una cadena de valor 10 y objservamos que nos devuelve</stron><br>".PHP_EOL;
+    echo "<strong>Vamos a probar a generar una cadena de valor 10 y objservamos que nos devuelve</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
     //asigno el valor de longitud
     $longitud = 10;
@@ -62,11 +62,11 @@ function cuerpo($longitud, $cadena)
     }else{
      echo "ERROR<br>".PHP_EOL;
     }
-    echo "<strong>Vamos a probar a generar una cadena de valor de 0 y otra de -5 y observamos que nos devuelve</stron><br>".PHP_EOL;
+    echo "<strong>Vamos a probar a generar una cadena de valor de 0 y otra de -5 y observamos que nos devuelve</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
 
     //ahora voy a probar con una cadena de por ejemplo 50 caracteres
-    echo "<strong>Vamos a probar a generar una cadena de valor 50 y observamos que nos devuelve</stron><br>".PHP_EOL;
+    echo "<strong>Vamos a probar a generar una cadena de valor 50 y observamos que nos devuelve</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
 
     //Cambiamos el valor de longitud
@@ -82,13 +82,13 @@ function cuerpo($longitud, $cadena)
     }else{
      echo "ERROR<br>".PHP_EOL;
     }
-    echo "<strong>Vamos a probar a generar una cadena de valor de 0 y otra de -5 y observamos que nos devuelve</stron><br>".PHP_EOL;
+    echo "<strong>Vamos a probar a generar una cadena de valor de 0 y otra de -5 y observamos que nos devuelve</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
 
 
     //Creamos una de longitud 0 y -5
 
-    echo "<strong>Generamos de Longitud  0</stron><br>".PHP_EOL;
+    echo "<strong>Generamos de Longitud  0</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
     $longitud = 0;
 
@@ -104,7 +104,7 @@ function cuerpo($longitud, $cadena)
     }
 
     echo "<br>".PHP_EOL;
-    echo "<strong>Generamos de Longitud -5</stron><br>".PHP_EOL;
+    echo "<strong>Generamos de Longitud -5</strong><br>".PHP_EOL;
     echo "<br>".PHP_EOL;
     $longitud = -5;
 
