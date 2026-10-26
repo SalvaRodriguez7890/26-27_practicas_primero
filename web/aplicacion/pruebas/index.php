@@ -34,7 +34,8 @@ function cuerpo()
                 <lu>
                     <li><a href="/aplicacion/pruebas/basicas.php">Pruebas Básicas</a></li>
                     <li><a href="/aplicacion/pruebas/index_funciones.php">Pruebas Funciones</a></li>
-                    <li><a href="/aplicacion/relacion1/pasopar.php">Acceso a Pasopar</a></li>
+                    <li><a href="/aplicacion/pruebas/Clases.php">Pruebas Clases</a></li>
+                    
                   
                 </lu>
 

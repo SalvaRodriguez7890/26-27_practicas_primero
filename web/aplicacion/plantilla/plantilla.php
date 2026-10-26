@@ -49,6 +49,8 @@ function finCabecera()
 ?>
 
     </head>
+   
+
 <?php   
 
 
@@ -62,6 +64,7 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
 
 ?>
     <body>
+        
         <div id="documento">
             <div id="fotoPuntoSeguro" style="align-items: center;">
                 <a href="/index.php">
@@ -77,8 +80,9 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
             <div id="barraLogin">
                 
             </div>
-            <div id="barraMenu">
-                                
+                 <div id="barraMenu">
+               
+                </div> 
             <div id="barraUbicacion">
                 <?php
                   

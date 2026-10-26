@@ -46,13 +46,14 @@ function cuantasVeces(array &$vector, string $cadena, float $numero, int &$numLl
     //la variable "cuentaVeces" al ser estatica dentro de la funcion, esta recuerda siempre su valor, al principio la se inicializa en 0
     //para darle una valor, pero luego conforme la vayamos llamando se irá incrementando.
     static $cuentaVeces=0;
+    $cuentaVeces++; 
 
     //si se le pasa como posicion asociativa primera o 2daw devolvemos error.
     if($cadena == "2daw" || $cadena == "primera"){
         return false;
     }else{//si no da error lo añadimos al array
         $vector[$cadena]=$numero;
-        $cuentaVeces++; 
+        
         $numLlamada = $cuentaVeces;
         return true;
     }
