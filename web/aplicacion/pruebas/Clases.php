@@ -47,6 +47,43 @@ $p2 = Prueba::desdeJson($datosJSon);
 $ins = new Instituto();
 
 
+//sobrecarga
+
+// $clase1 = new Clasenormal();
+// $clase2 = new Clasenormal();
+
+// $clase1->cadena ="Hola mundo";
+
+// $cad ="";
+
+// if(isset($clase1->cadena)){
+//     $cad = $clase1->cadena;
+// }
+
+//clase sin sobrecarga
+// $clase1 = new ClaseSinSobrecarga();
+
+// $clase1->cadena = "adios";
+// $cad = $clase1->cadena;
+
+// if(isset($clase1->cadena)){
+//     $cad = $clase1->cadena;
+// }
+
+//clase sobrecargada
+
+// $clase1 = new ClaseSobrecargada();
+
+// $val = $clase1->moreno;
+// $val = $clase1->marcha;
+// $val = $clase1->numero;
+// //$val = $clase1->hora;
+
+// $clase1->marcha=$val;
+// $clase1->numero=$val+10;
+// $clase1->hora=$val;
+
+
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");

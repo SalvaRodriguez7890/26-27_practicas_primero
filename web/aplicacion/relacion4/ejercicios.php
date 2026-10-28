@@ -23,7 +23,7 @@ $usuario=getenv("MYSQL_USER");
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
-inicioCuerpo("Relacion de Ejercicios 2", $barraUbi);
+inicioCuerpo("Relacion de Ejercicios 4", $barraUbi);
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -37,6 +37,7 @@ function cabecera()
 //vista
 function cuerpo()
 {
+
 
 echo "<hr>".PHP_EOL;
 
@@ -62,6 +63,10 @@ $saxofon = new InstrumentoBase("Saxofon");
 
 //ahora vamos a probar a aumentar la edad de los 3
 
+    echo "<br>".PHP_EOL;
+    echo "<br>".PHP_EOL;
+    echo "<b>Le sumamos un año a cada instrumento y ahora tienen:</b>".PHP_EOL;
+
 $guitarra->envejecer();
 $saxofon->envejecer();
 $trompeta->envejecer();
@@ -73,11 +78,14 @@ $trompeta->envejecer();
     echo "El instrumento: ".$trompeta->getDesripcion()." tiene <b>".$trompeta->getEdad()."</b> años".PHP_EOL;
     echo "<br>".PHP_EOL;
     echo "<br>".PHP_EOL;
-    echo "El instrumento: ".$guitarra->getDesripcion()." tiene <b>".$guitarra->getEdad()."</b> años".PHP_EOL;
-    echo "<br>".PHP_EOL;
-    echo "<br>".PHP_EOL;
     echo "El instrumento: ".$saxofon->getDesripcion()." tiene <b>".$saxofon->getEdad()."</b> años".PHP_EOL;
+    echo "<br>".PHP_EOL;
+    echo "<br>".PHP_EOL;
+    echo "El instrumento: ".$guitarra->getDesripcion()." tiene <b>".$guitarra->getEdad()."</b> años".PHP_EOL;
+    
+ 
+ 
 
-echo "<br>".PHP_EOL;
-echo "<hr>".PHP_EOL;
+
+
 }
