@@ -84,6 +84,20 @@ $ins = new Instituto();
 // $clase1->hora=$val;
 
 
+//Uso de la clase dinamica que guarda las propiedades en un array privado
+$clase1 = new ClaseDinamica();
+$clase2 = new ClaseDinamica();
+
+$clase1->nombre = "vicente";
+
+$cadena = $clase1->nombre;
+
+$clase1 -> varPublica=20;
+
+if(isset($clase2->nombre))
+        $cadena=$clase2->nombre;
+
+unset($clase1->nombre);
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
