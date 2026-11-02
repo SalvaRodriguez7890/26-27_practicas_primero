@@ -61,3 +61,58 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
+
+.menu-desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-desplegable .dropbtn {
+    color: white;
+    background-color: #2b7a70;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.menu-desplegable .dropbtn:hover {
+    background-color: #236159;
+}
+
+.menu-contenido {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.menu-contenido a {
+    color: #2d3748;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95em;
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.menu-contenido a:hover {
+    background-color: #f7fafc;
+    color: #2b7a70;
+}
+
+.menu-desplegable:hover .menu-contenido {
+    display: block;
+}

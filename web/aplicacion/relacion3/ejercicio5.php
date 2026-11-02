@@ -8,15 +8,15 @@ include_once("./funcionesRelacion3.php");
 $barraUbi = [
     [
         "TEXTO"=>"Inicio",
-        "LINK" =>"/index.php"
+        "ENLACE" =>"/index.php"
     ],
     [
-        "TEXTO"=>"Index Funciones",
-        "LINK" =>""
+        "TEXTO"=>"Relacion 3",
+        "ENLACE" =>"/aplicacion/relacion3/ejercicios.php"
     ],
     [
         "TEXTO"=>"Ejercicio 5",
-        "LINK" =>""
+        "ENLACE" =>"/aplicacion/relacion3/ejercicio5.php"
     ]
 ];
 
