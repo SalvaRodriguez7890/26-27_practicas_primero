@@ -124,19 +124,59 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
 
     echo "<b>EJERCICIO 3:</b> <br><br>".PHP_EOL;      
 
-    echo "<b>Creo el objeto Flauta y llamo a los diferentes metodos de esta:</b> <br>".PHP_EOL;
+    echo "<b>Creo el objeto Clarinete y llamo a los diferentes metodos de esta:</b> <br>".PHP_EOL;
     //Creo un objeto de la clase InstrumentoViento y por ejemplo le digo que es "flautta" no le pongo edad ni material para que coja los valores por defecto
-    $flauta = new InstrumentoViento();
+    $clarinete = new InstrumentoViento();
     
-    echo "<br><b>Para afinal la flauta -> </b>".$flauta->afinar().PHP_EOL;
+    echo "<br><b>Para afinar el clarinete -> </b>".$clarinete->afinar().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+
+    echo "<br><b>El Clarinete suena -> </b>".$clarinete->sonido().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+    //ahora voy a usar el método toString para que me mustre sus caracteristicas y ve si funciona el llamamiento al super que realicé
+    echo "<br><b>El Clarinete tiene unas caracteristicas -> </b>".$clarinete->__toString().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+    echo "<br><hr><br>".PHP_EOL;
+
+    echo "<b>EJERCICIO 4:</b> <br><br>".PHP_EOL;      
+
+    echo "<b>Creo el objeto flauta y llamo a los diferentes metodos de esta:</b> <br>".PHP_EOL;
+    //LLamo al método estatic0o de la clase CrearDesdeArray pàra crear una flauta, el array lo creo directamente dentro del método
+    $flauta = Flauta::CrearDesdeArray(['material' => 'madera de pino', 'edad' => 31]);
+    
+    echo "<br><b>Para afinar la flauta -> </b>".$flauta->afinar().PHP_EOL;
 
     echo "<br>".PHP_EOL;
 
     echo "<br><b>La Flauta suena -> </b>".$flauta->sonido().PHP_EOL;
 
     echo "<br>".PHP_EOL;
+
+
     //ahora voy a usar el método toString para que me mustre sus caracteristicas y ve si funciona el llamamiento al super que realicé
     echo "<br><b>La Flauta tiene unas caracteristicas -> </b>".$flauta->__toString().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+
+    echo "<br><b>Clonamos la flauta y la llamamos \$flauta2 </b>".PHP_EOL;
+    //cremaos flauta2 llamando al clone que definimos, este nuevo objeto será igual pero con edad = 0
+    $flauta2 = clone $flauta;
+
+    echo "<br><b>Para afinar la flauta2 -> </b>".$flauta2->afinar().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+
+    echo "<br><b>La Flauta suena -> </b>".$flauta2->sonido().PHP_EOL;
+
+    echo "<br>".PHP_EOL;
+
+
+    //ahora voy a usar el método toString para que me mustre sus caracteristicas y ve si funciona el llamamiento al super que realicé
+    echo "<br><b>La Flauta2 tiene unas caracteristicas -> </b>".$flauta2->__toString().PHP_EOL;
+
     
 }
 
