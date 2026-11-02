@@ -218,7 +218,7 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
 
 
     echo "<br>".PHP_EOL;
-    echo "<br><hr><br>".PHP_EOL;
+    echo "<hr><br>".PHP_EOL;
 
     echo "<b>EJERCICIO 6:</b> <br><br>".PHP_EOL;   
 
@@ -234,8 +234,6 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
     }
 
     echo "</p>".PHP_EOL;
-
-    echo "<hr>".PHP_EOL;
 
     echo "Pruebo el método estático con Generador:".PHP_EOL;
     echo "<p>";
@@ -260,5 +258,45 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
     //Muestro la cadena completa
         echo $cadena.PHP_EOL;
 
+
+    echo "<br>".PHP_EOL;
+    echo "<br><hr><br>".PHP_EOL;
+
+    echo "<b>EJERCICIO 7:</b> <br><br>".PHP_EOL;  
+
+    //Meto en un trycach para que por lo menos se monte la pagina correctamente
+    // y me muestre solamente el error en caso de que exista
+    try {
+
+    $Objeto = new MisPropiedades();
+
+    $Objeto->propPublica = "publica";
+    $Objeto->propiedad1 = 25;
+    $Objeto->propiedad2 = "cadena de texto";
+
+    //Voy a probar a meter otra propiedad mas
+
+    $Objeto->propiedad7 = "Otro Ejemplo de propiedad dinamica";
+
+    //Estos dos casos son los que darian error, descomentar para comprobarlo
+
+    //$Objeto->_propPrivada="privada"; //no es valida al ser privada 
+
+    //echo $Objeto->propiedad3; // esto debería dar un error al no haber asignado previamente la propiedad 
+
+    echo "La propiedad 1 vale: " . $Objeto->propiedad1 . "<br><br>".PHP_EOL;
+
+    echo "<b>Recorrido con foreach:</b><br>".PHP_EOL;
+    foreach ($Objeto as $clave => $valor) {
+        echo "Clave: [{$clave}] =&gt; Valor: {$valor}<br>".PHP_EOL;
+    }
+
+    } catch (Exception $e) {
+        echo "Excepción: " . $e->getMessage();
+    }
+
+    echo "<br><b>Si muestro solamente el \$Objeto: </b><br>".PHP_EOL;
+
+    echo print_r($Objeto).PHP_EOL;
 }
 
