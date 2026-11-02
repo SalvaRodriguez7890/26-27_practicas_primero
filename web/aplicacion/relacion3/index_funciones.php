@@ -8,14 +8,17 @@ include_once("./funcionesRelacion3.php");
 $barraUbi = [
     [
         "TEXTO"=>"Inicio",
-        "LINK" =>"/index.php"
+        "ENLACE" =>"/index.php"
     ],
     [
-        "TEXTO"=>"Index Funciones",
-        "LINK" =>""
+        "TEXTO"=>"Relacion 3",
+        "ENLACE" =>"/aplicacion/relacion3"
+    ],
+    [
+        "TEXTO"=>"Ejercicios Relacion 3",
+        "ENLACE" =>"/aplicacion/relacion3/index_funciones.php"
     ]
 ];
-
 
 $numero = doble(25);
 //Comprobación

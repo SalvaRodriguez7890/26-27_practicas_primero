@@ -5,17 +5,19 @@ include_once(dirname(__FILE__) . "/../../cabecera.php");
 $barraUbi = [
     [
         "TEXTO"=>"Inicio",
-        "LINK" =>"/index.php"
+        "ENLACE" =>"/index.php"
     ],
     [
         "TEXTO"=>"Relacion 4",
-        "LINK" =>""
+        "ENLACE" =>"/aplicacion/relacion4/ejercicios.php"
     ],
     [
-        "TEXTO"=>"Ejercicios Clases",
-        "LINK" =>"/aplicacion/relacion4"
+        "TEXTO"=>"Ejercicios Relacion 4",
+        "ENLACE" =>"/aplicacion/relacion4/ejercicios.php"
     ]
 ];
+
+
 
 $usuario=getenv("MYSQL_USER");
 

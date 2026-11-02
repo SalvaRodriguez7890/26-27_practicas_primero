@@ -17,15 +17,15 @@ $veces = 0;
 $barraUbi = [
     [
         "TEXTO"=>"Inicio",
-        "LINK" =>"/index.php"
+        "ENLACE" =>"/index.php"
     ],
     [
-        "TEXTO"=>"Index Funciones",
-        "LINK" =>""
+        "TEXTO"=>"Relacion 3",
+        "ENLACE" =>"/aplicacion/relacion3/ejercicios.php"
     ],
     [
         "TEXTO"=>"Ejercicio 1",
-        "LINK" =>""
+        "ENLACE" =>"/aplicacion/relacion3/ejercicio1.php"
     ]
 ];
 
