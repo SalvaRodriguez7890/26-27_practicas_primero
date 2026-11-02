@@ -33,7 +33,7 @@
 *   - No tiene la sobrecarga de propiedades por defecto.
  */ 
 
-class InstrumentoBase  {
+abstract class InstrumentoBase  {
 
     protected static int $_numElementos = 0;
 
@@ -82,20 +82,20 @@ class InstrumentoBase  {
  *
  * @return string
  */
-function sonido():string{
+abstract function sonido():string;
 
-return "Pom pom";
-}
+//return "Pom pom"};
+
 
 /**
  * Método afinar, devuelve una cadena con los pasos necesarios para afinar el instrumento
  *
  * @return string
  */
-function afinar():string{
+abstract function afinar():string;
 
-return "paso 1, paso 2";
-}
+//return "paso 1, paso 2"};
+
 
 
 /**
