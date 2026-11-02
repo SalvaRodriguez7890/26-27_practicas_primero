@@ -207,7 +207,16 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
         echo "- " . $caso->descripcion() . " (Valor: " . $caso->valor() . ")<br>";
     }
 
+    echo "<br>".PHP_EOL;
+    echo "<b>Creo una persona para probar que funciona la enumeracion en la clase Persona:</b> <br>".PHP_EOL;   
 
+    //para crear personas hay que llamar al metodo RegistrarPersona.
+    $persona1 = Persona::registrarPersona("Salvador", "30/05/2000", "Callse 3", "Pedrera", EstadoCivil::SOLTERO);
+
+    echo "<br><b>La persona creada es:</b> <br>".PHP_EOL;
+    echo "<br>".$persona1->__toString()."<br>".PHP_EOL;
+
+ 
 
 }
 
