@@ -187,19 +187,19 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
     $miEstado = EstadoCivil::CASADO;
 
     //Pruebo el método descripcion() para obtener la descripción del estado civil
-    echo "Descripción del estado: " . $miEstado->descripcion() . "<br>"; 
+    echo "Descripción del estado: " . $miEstado->descripcion() . "<br>".PHP_EOL; 
 
     //Pruebo el método valor de ese estado
     echo "Valor: " . $miEstado->valor() . "<br>"; // Imprime: 20
 
     // Accdo a las vbariables también usando directamente la ->
-    echo "Nombre del estado: " . $miEstado->name . "<br>"; 
-    echo "Valor del estado: " . $miEstado->value . "<br>"; 
+    echo "Nombre del estado: " . $miEstado->name . "<br>".PHP_EOL; 
+    echo "Valor del estado: " . $miEstado->value . "<br>".PHP_EOL; 
 
     echo "<br>";
 
     //Ahora voy a probar a sacar los casos usando un foreach para recorrer el array que nos devuelve
-    echo "<strong>Listado de todos los casos:</strong><br>";
+    echo "<strong>Listado de todos los casos:</strong><br>".PHP_EOL;
 
     //Creo el foreach con diorectamente el llamamiento al la funcion casos()
     foreach (EstadoCivil::casos() as $caso) {
@@ -216,8 +216,49 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
     echo "<br><b>La persona creada es:</b> <br>".PHP_EOL;
     echo "<br>".$persona1->__toString()."<br>".PHP_EOL;
 
- 
+
+    echo "<br>".PHP_EOL;
+    echo "<br><hr><br>".PHP_EOL;
+
+    echo "<b>EJERCICIO 6:</b> <br><br>".PHP_EOL;   
+
+    //Probaermos el fibonacci a ver si funciona bien
+
+    echo "Probando el Iterador (con foreach para 13 valores):".PHP_EOL;
+
+    echo "<p>".PHP_EOL;
+
+    // Hacemos un foreach y dentro creamos la serie fibonacci con valor 10
+    foreach (new SerieFibonacci(13) as $clave => $valor) {
+        echo "Posición [{$clave}] -> <b>{$valor}</b><br>".PHP_EOL;
+    }
+
+    echo "</p>".PHP_EOL;
+
+    echo "<hr>".PHP_EOL;
+
+    echo "Pruebo el método estático con Generador:".PHP_EOL;
+    echo "<p>";
+
+    
+    // Llamamos al generador pidiéndole 13 elementos
+    $valorFibo = 13;
+    //Creo un limite para poder separar por "-" los valroes
+    $limite = $valorFibo-1;
+    //Creo la variable cadena donde voy metiendo los valores.
+    $cadena = "";
+    foreach (SerieFibonacci::fFibonacci($valorFibo) as $clave => $valor) {
+   
+        //si la clave es menor que el limite le meto el guion
+        if($clave < $limite) {
+           $cadena .= $valor . " - ";
+
+        }else{ //sino (ya es el ultimo) solo paso el valor.
+            $cadena .= $valor;
+        }
+    }
+    //Muestro la cadena completa
+        echo $cadena.PHP_EOL;
 
 }
-
 
