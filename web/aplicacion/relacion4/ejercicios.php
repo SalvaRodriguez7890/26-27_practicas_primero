@@ -178,6 +178,37 @@ echo "<b>EJERCICIO 1:</b> <br><br>".PHP_EOL;
     echo "<br><b>La Flauta2 tiene unas caracteristicas -> </b>".$flauta2->__toString().PHP_EOL;
 
     
+    echo "<br>".PHP_EOL;
+    echo "<br><hr><br>".PHP_EOL;
+
+    echo "<b>EJERCICIO 5:</b> <br><br>".PHP_EOL;   
+
+    // Para probar la enumeracion simplemente creo una variable con un estado, por ejemplo casasdo
+    $miEstado = EstadoCivil::CASADO;
+
+    //Pruebo el método descripcion() para obtener la descripción del estado civil
+    echo "Descripción del estado: " . $miEstado->descripcion() . "<br>"; 
+
+    //Pruebo el método valor de ese estado
+    echo "Valor: " . $miEstado->valor() . "<br>"; // Imprime: 20
+
+    // Accdo a las vbariables también usando directamente la ->
+    echo "Nombre del estado: " . $miEstado->name . "<br>"; 
+    echo "Valor del estado: " . $miEstado->value . "<br>"; 
+
+    echo "<br>";
+
+    //Ahora voy a probar a sacar los casos usando un foreach para recorrer el array que nos devuelve
+    echo "<strong>Listado de todos los casos:</strong><br>";
+
+    //Creo el foreach con diorectamente el llamamiento al la funcion casos()
+    foreach (EstadoCivil::casos() as $caso) {
+        // Cadaa caso es un estado civil, por lo que accedo a sus metodos
+        echo "- " . $caso->descripcion() . " (Valor: " . $caso->valor() . ")<br>";
+    }
+
+
+
 }
 
 
