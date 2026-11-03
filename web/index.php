@@ -45,12 +45,20 @@ function cuerpo()
 ?>
             <br>
                 <lu>
+                    <h3>ENLACES A DISTINTAS RELACIONES / APUNTES</h3>
+                    <hr>
                     <li><a href="/aplicacion/pruebas/index.php">Acceso a Pruebas</a></li>
+                    <br>
                     <li><a href="/aplicacion/relacion1/ejercicios.php">Acceso a ejercicios Relacion 1</a></li>
+                    <br>
                     <li><a href="/aplicacion/relacion1Corregida/index.php">Acceso a ejercicios Relacion 1 CORREGIDA</a></li>
+                    <br>
                     <li><a href="/aplicacion/relacion2/ejercicios.php">Acceso a ejercicios Relacion 2</a></li>
+                    <br>
                     <li><a href="/aplicacion/relacion3/ejercicios.php">Acceso a ejercicios Relacion 3</a></li>
+                    <br>
                     <li><a href="/aplicacion/relacion4/ejercicios.php">Acceso a ejercicios Relacion 4</a></li>
+                    <br>
                     <li><a href="/aplicacion/expresionesRegulares/expresiones.php">Acceso a Expresiones Regularses (Ejemplos)</a></li>
                 </lu>
 
