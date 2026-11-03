@@ -45,7 +45,7 @@ class InstrumentoViento extends InstrumentoBase {
     }
 
     /**
-     * Método afinar con el atributo FInal para que no hereden
+     * Método afinar con el atributo FInal para que no puedan redefinir en las clases que hereden
      *
      * @return string
      */
