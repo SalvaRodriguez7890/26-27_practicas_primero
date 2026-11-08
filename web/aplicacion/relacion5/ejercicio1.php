@@ -289,5 +289,81 @@ $cadena = "Cadena de ejemplo1234";
 $resultado1 = VALFILTER\validaCadena($cadena, 20, "Cadena Correcta");
 echo "Se comprueba la variable \$cadena con valor 'Cadena de ejemplo1234' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
 
+//
+//
+//
+echo "<h2>FUNCION validaExpresion()</h2>".PHP_EOL;
+
+//Primero el val_normal
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
+
+//Creo una expresion simple que dice que la cadena sea de 5 digitos(/^\d{5}$/)
+$patron = '/^\d{5}$/';
+
+//Primero como ejemplo le paso una cadena con 5 digitos
+$cadena = "03201";
+
+$resultado1 = VALNORMAL\validaExpresion($cadena, $patron, "12345");
+echo "Se comprueba la variable \$cadena con valor '03201' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+// Ahora pruebo a pasarle una cadena aleatoria
+$cadena = "ASasdf31";
+
+$resultado1 = VALNORMAL\validaExpresion($cadena, $patron, "12345");
+echo "Se comprueba la variable \$cadena con valor 'ASasdf31' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+//Ahora con valfilter
+echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
+
+//Creo una expresion simple que dice que la cadena sea de 5 digitos(/^\d{5}$/)
+$patron = '/^\d{5}$/';
+
+//Primero como ejemplo le paso una cadena con 5 digitos
+$cadena = "03201";
+
+$resultado1 = VALFILTER\validaExpresion($cadena, $patron, "12345");
+echo "Se comprueba la variable \$cadena con valor '03201' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+// Ahora pruebo a pasarle una cadena aleatoria
+$cadena = "ASasdf31";
+
+$resultado1 = VALFILTER\validaExpresion($cadena, $patron, "12345");
+echo "Se comprueba la variable \$cadena con valor 'ASasdf31' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+//
+//
+//
+
+echo "<h2>FUNCION validaRango()</h2>".PHP_EOL;
+
+//Primero el val_normal
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
+
+//Creo un array con claves / valor
+$opcionesArray = ['admin' => 'Administrador', 
+                  'user' => 'Usuario', 
+                  'inv' => 'Invitado'];
+
+//Le meto un valor existente
+$valorBuscado = "Usuario";
+
+$resultado1 = VALNORMAL\validaRango($valorBuscado, $opcionesArray, 1);
+echo "Se comprueba si el valor 'Usuario' está en los valores del array => ".($resultado1?"TRUE":"FALSE")."<br>".PHP_EOL;
+
+//Ahora voy a comprobar la clave
+$claveBuscada = "admin";
+
+$resultado1 = VALNORMAL\validaRango($claveBuscada, $opcionesArray, 2);
+echo "Se comprueba si la clave 'admin' está en las claves del array => ".($resultado1?"TRUE":"FALSE")."<br>".PHP_EOL;
+
+//Ahora con un valorque no existe
+$noExiste = "root";
+
+$resultado1 = VALNORMAL\validaRango($noExiste, $opcionesArray, 1);
+echo "Se comprueba si el valor 'root' está en los valores del array => ".($resultado1?"TRUE":"FALSE")."<br>".PHP_EOL;
+
+$resultado1 = VALNORMAL\validaRango($noExiste, $opcionesArray, 2);
+echo "Se comprueba si la clave 'root' está en los valores del array => ".($resultado1?"TRUE":"FALSE")."<br>".PHP_EOL;
+
 
 }
