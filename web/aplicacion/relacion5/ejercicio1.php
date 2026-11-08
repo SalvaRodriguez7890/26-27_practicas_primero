@@ -53,34 +53,34 @@ echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
 
 // le voy a pasar primero un un rango entre 10 y 36 y el numero a comprobar va aser el 13
 //debe devolver true, y por defecto por ejemplo 21
-$num1 = 13;
+$fecha = 13;
 
-$resultado1 = VALNORMAL\validaEntero($num1, 10, 36, 21);
-echo "Se comprueba la variable \$num1 con valor 13 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALNORMAL\validaEntero($fecha, 10, 36, 21);
+echo "Se comprueba la variable \$fecha con valor 13 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //Ahor voy a pasar el mismo rango y el numero a comprobar va aser el 37
 //debe devolver false, y por defecto por ejemplo 21, pues la variable debe pasar de 37 a 21
-$num1 = 37;
+$fecha = 37;
 
-$resultado1 = VALNORMAL\validaEntero($num1, 10, 36, 21);
-echo "Se comprueba la variable \$num1 con valor 37 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALNORMAL\validaEntero($fecha, 10, 36, 21);
+echo "Se comprueba la variable \$fecha con valor 37 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //ahora con val_filter
 echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
 
 // le voy a pasar primero un un rango entre 10 y 36 y el numero a comprobar va aser el 13
 //debe devolver true, y por defecto por ejemplo 21
-$num1 = 13;
+$fecha = 13;
 
-$resultado1 = VALFILTER\validaEntero($num1, 10, 36, 21);
-echo "Se comprueba la variable \$num1 con valor 13 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALFILTER\validaEntero($fecha, 10, 36, 21);
+echo "Se comprueba la variable \$fecha con valor 13 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //Ahor voy a pasar el mismo rango y el numero a comprobar va aser el 37
 //debe devolver false, y por defecto por ejemplo 21, pues la variable debe pasar de 37 a 21
-$num1 = 37;
+$fecha = 37;
 
-$resultado1 = VALFILTER\validaEntero($num1, 10, 36, 21);
-echo "Se comprueba la variable \$num1 con valor 37 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALFILTER\validaEntero($fecha, 10, 36, 21);
+echo "Se comprueba la variable \$fecha con valor 37 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //
 //
@@ -92,39 +92,133 @@ echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
 
 // le voy a pasar primero un un rango entre 10.16 y 36.04 y el numero a comprobar va aser el 31.03
 //debe devolver true, y por defecto por ejemplo 25.37
-$num1 = 31.03;
+$fecha = 31.03;
 
-$resultado1 = VALNORMAL\validaReal($num1, 10.16, 36.04, 25.37);
-echo "Se comprueba la variable \$num1 con valor 31.03 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALNORMAL\validaReal($fecha, 10.16, 36.04, 25.37);
+echo "Se comprueba la variable \$fecha con valor 31.03 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //Ahor voy a pasar el mismo rango y el numero a comprobar va aser el 37.41
 //debe devolver false, y por defecto por ejemplo 21, pues la variable debe pasar de 37 a 21
-$num1 = 37.41;
+$fecha = 37.41;
 
-$resultado1 = VALNORMAL\validaReal($num1, 10.16, 36.04, 25.37);
-echo "Se comprueba la variable \$num1 con valor 37.41 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALNORMAL\validaReal($fecha, 10.16, 36.04, 25.37);
+echo "Se comprueba la variable \$fecha con valor 37.41 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //ahora con val_filter
 echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
 
 // le voy a pasar primero un un rango entre 10.16 y 36.04 y el numero a comprobar va aser el 31.03
 //debe devolver true, y por defecto por ejemplo 25.37
-$num1 = 31.03;
+$fecha = 31.03;
 
-$resultado1 = VALFILTER\validaReal($num1, 10.16, 36.04, 25.37);
-echo "Se comprueba la variable \$num1 con valor 31.03 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALFILTER\validaReal($fecha, 10.16, 36.04, 25.37);
+echo "Se comprueba la variable \$fecha con valor 31.03 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
 //Ahor voy a pasar el mismo rango y el numero a comprobar va aser el 37.41
 //debe devolver false, y por defecto por ejemplo 21, pues la variable debe pasar de 37 a 21
-$num1 = 37.41;
+$fecha = 37.41;
 
-$resultado1 = VALFILTER\validaReal($num1, 10.16, 36.04, 25.37);
-echo "Se comprueba la variable \$num1 con valor 37.41 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $num1<br>".PHP_EOL;
+$resultado1 = VALFILTER\validaReal($fecha, 10.16, 36.04, 25.37);
+echo "Se comprueba la variable \$fecha con valor 37.41 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
 
+//
+//
+//
 
+echo "<h2>FUNCION validaFecha()</h2>".PHP_EOL;
+//Primero el val_noraml
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
 
+//Le paso una fecha corecta, debe devolve true y el valor que le pase
+$fecha = "21/12/2021";
+
+$resultado1 = VALNORMAL\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 21/12/2021 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//Ahora le voy a pasr una fecha con formato correcto pero con el mes 14 por ejemplo,
+//Debe devolver false y el valor por defecto
+$fecha = "21/14/2021";
+
+$resultado1 = VALNORMAL\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 21/14/2021 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//Ahora voy a pasarle un valor correcto pero con formato incorrecto
+$fecha = "1/4/21";
+
+$resultado1 = VALNORMAL\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 1/4/21 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//ahora con val_filter
+echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
+
+//Le paso una fecha corecta, debe devolve true y el valor que le pase
+$fecha = "21/12/2021";
+
+$resultado1 = VALFILTER\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 21/12/2021 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//Ahora le voy a pasr una fecha con formato correcto pero con el mes 14 por ejemplo,
+//Debe devolver false y el valor por defecto
+$fecha = "21/14/2021";
+
+$resultado1 = VALFILTER\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 21/14/2021 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//Ahora voy a pasarle un valor correcto pero con formato incorrecto
+$fecha = "1/4/21";
+
+$resultado1 = VALFILTER\validaFecha($fecha, "01/01/2000");
+echo "Se comprueba la variable \$fecha con valor 1/4/21 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $fecha<br>".PHP_EOL;
+
+//
+//
+//
+
+echo "<h2>FUNCION validaHora()</h2>".PHP_EOL;
+//Primero el val_noraml
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
+
+//Le paso una hora corecta, debe devolve true y el valor que le pase
+$hora = "16:31:57";
+
+$resultado1 = VALNORMAL\validaHora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 16:31:57 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
+
+//Ahora le voy a pasr una hora con formato correcto pero con los minutos 70 por ejemplo,
+//Debe devolver false y el valor por defecto
+$hora = "16:70:57";
+
+$resultado1 = VALNORMAL\validahora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 16:70:57 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
+
+//Por ultimo le paso una hora correcta pero con solo 1 digito
+$hora = "6:1:7";
+
+$resultado1 = VALNORMAL\validaHora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 6:1:7 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
+
+//ahora con var_filter
+echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
+
+//Le paso una hora corecta, debe devolve true y el valor que le pase
+$hora = "16:31:57";
+
+$resultado1 = VALFILTER\validaHora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 16:31:57 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
+
+//Ahora le voy a pasr una hora con formato correcto pero con los minutos 70 por ejemplo,
+//Debe devolver false y el valor por defecto
+$hora = "16:70:57";
+
+$resultado1 = VALFILTER\validahora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 16:70:57 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
+
+//Por ultimo le paso una hora correcta pero con solo 1 digito
+$hora = "6:1:7";
+
+$resultado1 = VALFILTER\validaHora($hora, "00:00:00");
+echo "Se comprueba la variable \$hora con valor 6:1:7 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
 
 
 
 }
-

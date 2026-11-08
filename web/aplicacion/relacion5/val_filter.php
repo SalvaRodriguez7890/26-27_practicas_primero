@@ -79,4 +79,118 @@ function validaReal(float &$var, float $min, float $max, float $defecto):bool {
     }
 }
 
+/**
+ *  Function validaFecha(string &$var, string $defecto):bool Esta función comprueba que $var
+ *  contiene una fecha correcta en el formato dd/mm/aaaa. En $var se devuelve la fecha saneada
+ *  (2 cifras para dia y mes y cuatro para año- ej fecha 1/2/2023 es válida aunque se sanea y se
+ *  convierte en 01/02/2023). En caso de no cumplir las condiciones devuelve $defecto en
+ *  $var. La función devuelve true si es correcta y false en caso contrario.
+ *
+ * @param string $var
+ * @param string $defecto
+ * @return boolean
+ */
+function validaFecha(string &$var, string $defecto):bool {
+    
+//con split separo el string de fecha por las "/" y al dia mes y año le asigno suvalor
+    $arrayFecha = explode("/",$var);
+    
+    $dia=$arrayFecha[0];
+    $mes=$arrayFecha[1];
+    $anio=$arrayFecha[2];
 
+    //Por si acaso me aseguro que el array creado tenga 3 objetos,
+    //porque si alguien pasa por ejemplo un string 21/03, el array
+    //solo tiene 2 y me daria error
+    if(count($arrayFecha) != 3){
+        $var = $defecto;
+        return false;
+    }
+
+    //ahora compruebo la longitud y le añado los ceros concatenando
+    if(mb_strlen($mes) < 2){
+        $mes = "0".$mes;
+    }
+    if(mb_strlen($dia) < 2){
+        $dia = "0".$dia;
+    }
+    //el año es raro, porque si enviamos un 99, significa 1999 y no 2099,
+    //por lo que asumiremos que las fechas que se meten en del año 2000 en adelante
+    if(mb_strlen($anio) < 4){
+       $anio = "20".$anio;
+    }
+
+        //Con checkdate compreubo que la fecha sea correcta
+        if (checkdate($mes, $dia, $anio)) {
+            $var = $dia."/".$mes."/".$anio;
+            return true;
+        }
+    
+
+    // Si no cumple el formato o la fecha no existe en el calendario:
+    $var = $defecto;
+    return false;
+   
+}
+
+/**
+ * function validaHora(string &$var, string $defecto):bool Esta función comprueba que $var
+ * contiene una hora correcta en el formato hh:mm:ss . En $var se devuelve la hora saneada (2
+ * cifras para hora, min, segundos - Ej 0:5:1, hora valida aunque se sanea y se convierte a
+ * 00:05:01). En caso de no cumplir las condiciones devuelve $defecto en $var. La función
+ * devuelve true si es correcta y false en caso contrario
+ *
+ * @param string $var
+ * @param string $defecto
+ * @return boolean
+ */
+function validaHora(string &$var, string $defecto):bool {
+
+//con explode separo el string de la hora por las ":"
+    $arrayHora = explode(":",$var);
+    
+    //Por si acaso me aseguro que el array creado tenga 3 objetos,
+    //porque si alguien pasa por ejemplo un string 14:31, el array
+    //solo tiene 2 y me daria error
+    if(count($arrayHora) != 3){
+        $var = $defecto;
+        return false;
+    }
+
+    $hora=$arrayHora[0];
+    $minutos=$arrayHora[1];
+    $segundos=$arrayHora[2];
+
+     //ahora compruebo la longitud y le añado los ceros concatenando
+    if(mb_strlen($minutos) < 2){
+        $minutos = "0".$minutos;
+    }
+    if(mb_strlen($hora) < 2){
+        $hora = "0".$hora;
+    }
+    if(mb_strlen($segundos) < 2){
+        $segundos = "0".$segundos;
+    }
+    
+    //debo comprobar que no se le pasa negativo y que no pasa de 60 min, 60 segunos o 23 horas
+    //si algun parametro no es validado devuelvo false y el por defecto
+    if(!($hora < 23 && $hora >= 0 &&
+       $minutos < 60 && $minutos >= 0 &&
+       $segundos < 60 && $segundos >= 0)){
+
+        $var = $defecto;
+        return false;
+       }
+
+        //ahora a partir de las variables de hora, minuto y segundos creo un objeto DateTime
+            $dateTime = \DateTime::createFromFormat('H:i:s', $hora.":".$minutos.":".$segundos);
+        if($dateTime != false){
+            $var= $hora.":".$minutos.":".$segundos;
+            return true;
+        }
+    
+    // Si el $dateTime es falso no entra y devuelvo el valor por defecto y false
+    $var = $defecto;
+    return false;
+
+}
