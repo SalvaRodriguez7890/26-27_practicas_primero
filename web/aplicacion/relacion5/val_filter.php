@@ -15,7 +15,6 @@ namespace VALFILTER;
  * @return boolean
  */
 function validaEntero(int &$var, int $min, int $max, int $defecto):bool{
-
 //meto el filtro dentro la variable "$ociones" con las variables de minimo y maximo quel e paso
     $opciones = [
         'options' => [
@@ -79,3 +78,5 @@ function validaReal(float &$var, float $min, float $max, float $defecto):bool {
         return false;
     }
 }
+
+
