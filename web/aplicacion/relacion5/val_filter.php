@@ -194,3 +194,29 @@ function validaHora(string &$var, string $defecto):bool {
     return false;
 
 }
+
+/**
+ * function validaEmail(string &$var, string $defecto):bool Esta función comprueba que $var
+ * contiene un email correcto en el formato aaaaa@bbbb.ccc. En $var se devuelve el email
+ * saneado (en caso de no cumplir las condiciones devuelve $defecto). La función devuelve
+ * true si es correcto y false en caso contrario.
+ * 
+ * @param string $var
+ * @param string $defecto
+ * @return boolean
+ */
+function validaEmail(string &$var, string $defecto): bool {
+    //Validamos el mail con el filter
+    $emailSaneado = filter_var($var, FILTER_VALIDATE_EMAIL);
+
+    //Si el string no es false no entra, por loque es correcto
+    if ($emailSaneado !== false) {
+        $var = $emailSaneado; // Actualizamos $var con el email saneado
+        return true;
+    }
+
+    // Si no cumple las condiciones, valor por defecto y doy false
+    $var = $defecto;
+    return false;
+}
+

@@ -177,3 +177,28 @@ function validaHora(string &$var, string $defecto):bool {
     return false;
 
 }
+
+/**
+ * function validaEmail(string &$var, string $defecto):bool Esta función comprueba que $var
+ * contiene un email correcto en el formato aaaaa@bbbb.ccc. En $var se devuelve el email
+ * saneado (en caso de no cumplir las condiciones devuelve $defecto). La función devuelve
+ * true si es correcto y false en caso contrario.
+ * 
+ * @param string $var
+ * @param string $defecto
+ * @return boolean
+ */
+function validaEmail(string &$var, string $defecto): bool {
+    //Creo una expresion regular para el email
+    $patron = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+
+    //con el preg_match le asigno el patron a la variable para ver si esta correcto
+    if (preg_match($patron, $var)) {
+        //Si entra devuelvo true proque es correcto
+        return true;
+    }
+
+    //Si no cumple el formato, devuelvo el valor por defecto y false
+    $var = $defecto;
+    return false;
+}

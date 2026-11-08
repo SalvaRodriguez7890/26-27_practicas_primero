@@ -219,6 +219,40 @@ $hora = "6:1:7";
 $resultado1 = VALFILTER\validaHora($hora, "00:00:00");
 echo "Se comprueba la variable \$hora con valor 6:1:7 => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $hora<br>".PHP_EOL;
 
+//
+//
+//
+
+echo "<h2>FUNCION validaEmail()</h2>".PHP_EOL;
+//Primero el val_noraml
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
+
+//Le paso un mail corecto, debe devolve true y el valor que le pase
+$mail = "ejemplo3123correcto@mail.com";
+
+$resultado1 = VALNORMAL\validaEmail($mail, "ejemploCorrecto@emial.com");
+echo "Se comprueba la variable \$mail con valor 'ejemplo3123correcto@mail.com' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $mail<br>".PHP_EOL;
+
+//Le paso un mail incorrecto, debe devolve false y el valor por defecto
+$mail = "esto no es un email";
+
+$resultado1 = VALNORMAL\validaEmail($mail, "ejemploCorrecto@emial.com");
+echo "Se comprueba la variable \$mail con valor 'esto no es un email' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $mail<br>".PHP_EOL;
+
+//Ahora con valfilter
+echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
+
+//Le paso un mail corecto, debe devolve true y el valor que le pase
+$mail = "ejemplo3123correcto@mail.com";
+
+$resultado1 = VALFILTER\validaEmail($mail, "ejemploCorrecto@emial.com");
+echo "Se comprueba la variable \$mail con valor 'ejemplo3123correcto@mail.com' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $mail<br>".PHP_EOL;
+
+//Le paso un mail incorrecto, debe devolve false y el valor por defecto
+$mail = "esto no es un email";
+
+$resultado1 = VALFILTER\validaEmail($mail, "ejemploCorrecto@emial.com");
+echo "Se comprueba la variable \$mail con valor 'esto no es un email' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $mail<br>".PHP_EOL;
 
 
 }
