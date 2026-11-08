@@ -220,3 +220,35 @@ function validaEmail(string &$var, string $defecto): bool {
     return false;
 }
 
+/**
+ * function validaCadena(string &$var, int $longitud, string $defecto):bool Esta función
+ * comprueba que $var contiene una cadena de longitud máxima $longitud. En caso de no
+ * cumplir las condiciones se asigna a $var el valor $defecto. La función devuelve true si es
+ * correcto y false en caso contrario.
+ *
+ * @param string $var
+ * @param integer $longitud
+ * @param string $defecto
+ * @return boolean
+ */
+function validaCadena(string &$var, int $longitud, string $defecto): bool {
+  
+    $opciones = [
+        'options' => [
+            'max_range' => $longitud
+        ]
+    ];
+
+    //Para valñidar la logitud uso el valor mb_strelen() osea lo que mide la variable
+    //y lo meto dentro de un filter_validate_int con max_range como logitud, de esta forma
+    //valido que esa cadena tenga esa logitud
+    $resultado = filter_var(mb_strlen($var), FILTER_VALIDATE_INT, $opciones);
+
+    if ($resultado !== false) {
+        return true;
+    }
+
+    // Si no cumple la condición de longitud, asignamos el valor por defecto y devolvemos false
+    $var = $defecto;
+    return false;
+}

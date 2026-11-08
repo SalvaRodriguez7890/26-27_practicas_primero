@@ -254,5 +254,40 @@ $mail = "esto no es un email";
 $resultado1 = VALFILTER\validaEmail($mail, "ejemploCorrecto@emial.com");
 echo "Se comprueba la variable \$mail con valor 'esto no es un email' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $mail<br>".PHP_EOL;
 
+//
+//
+//
+
+echo "<h2>FUNCION validaCadena()</h2>".PHP_EOL;
+//Primero el val_noraml
+echo "<h3>--- Librería VALNORMAL ---</h3>".PHP_EOL;
+
+//Voy a usar la sigueinte cadena que contando espacios tiene uan logitud de 18
+$cadena = "Cadena de ejemplo";
+
+$resultado1 = VALNORMAL\validaCadena($cadena, 20, "Cadena Correcta");
+echo "Se comprueba la variable \$cadena con valor 'Cadena de ejemplo' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+//Ahora le voy a sumar 4 caracteres para que mida 22 y nos devuelva el valor por defecto
+$cadena = "Cadena de ejemplo1234";
+
+$resultado1 = VALNORMAL\validaCadena($cadena, 20, "Cadena Correcta");
+echo "Se comprueba la variable \$cadena con valor 'Cadena de ejemplo1234' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+//Ahora con valfilter
+echo "<h3>--- Librería VALFILTER ---</h3>".PHP_EOL;
+
+//Voy a usar la sigueinte cadena que contando espacios tiene uan logitud de 18
+$cadena = "Cadena de ejemplo";
+
+$resultado1 = VALFILTER\validaCadena($cadena, 20, "Cadena Correcta");
+echo "Se comprueba la variable \$cadena con valor 'Cadena de ejemplo' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
+//Ahora le voy a sumar 4 caracteres para que mida 22 y nos devuelva el valor por defecto
+$cadena = "Cadena de ejemplo1234";
+
+$resultado1 = VALFILTER\validaCadena($cadena, 20, "Cadena Correcta");
+echo "Se comprueba la variable \$cadena con valor 'Cadena de ejemplo1234' => ".($resultado1?"TRUE":"FALSE") . " | Valor final: $cadena<br>".PHP_EOL;
+
 
 }
