@@ -28,15 +28,7 @@ enum EstadoCivil:int{
      */
     public function descripcion(): string {
 
-        switch($this) {
-
-            case self::SOLTERO: return 'Soltero'; break;
-            case self::CASADO: return 'Casado'; break;
-            case self::PAREJA: return 'Pareja'; break;
-            case self::VIUDO: return 'Viudo'; break;
-            default: return 'Desconocido'; break;
-
-        };
+        return $this->name;
     }
 
     /**
@@ -54,12 +46,7 @@ enum EstadoCivil:int{
      * @return array
      */
     public static function casos(): array {
-        return [
-            EstadoCivil::SOLTERO,
-            EstadoCivil::CASADO,
-            EstadoCivil::PAREJA,
-            EstadoCivil::VIUDO,
-        ];
+        return EstadoCivil::cases();
     }
 
     

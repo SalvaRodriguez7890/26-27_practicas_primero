@@ -46,12 +46,12 @@ class Persona{
      * @param string $domicilio
      * @param string $localidad
      * @param EstadoCivil $estado
-     * @return Persona
+     * @return static
      */
-    public static function registrarPersona(string $nombre, string $fechaNacimiento, string $domicilio, string $localidad, EstadoCivil $estado): Persona {
+    public static function registrarPersona(string $nombre, string $fechaNacimiento, string $domicilio, string $localidad, EstadoCivil $estado): static {
         // Creo el objeto Persona usando el constructor privado
         // y luego le cambio sus propiedades a los valores recibidos por parámetro
-        $persona = new Persona();
+        $persona = new static();
         
         // Asigno los valores recibidos por parámetro a las propiedades
         $persona->_nombre = $nombre;

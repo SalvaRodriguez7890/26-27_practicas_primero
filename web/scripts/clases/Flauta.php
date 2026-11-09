@@ -13,7 +13,7 @@
  * 
  */ 
 
-final class Flauta extends InstrumentoViento {
+final class Flauta extends InstrumentoViento implements IFabricable {
 
     // Declaro el atributo material
     protected string $_material;
@@ -27,11 +27,10 @@ final class Flauta extends InstrumentoViento {
      */
     //material por defecto es madera, y la edad 15
     private function __construct(string $material = "madera", int $edad = 15) { 
-        // Llamamos al constructor de la clase padre pasándole la descripción fija y la edad
-        parent::__construct("instrumento de viento", $edad);
+        // Llamamos al constructor de la clase padre pasándole el material y la edad
+        parent::__construct($material, $edad);
         
-        // Asignamos el unico parametro de esta clase
-        $this->_material = $material;
+      
     }
 
     /**
@@ -82,4 +81,27 @@ final class Flauta extends InstrumentoViento {
         // Añado lo que dice el enunciado, y para no repetir codigo llamo al tostring de la clase padre
         return parent::__toString();
     }
+
+
+     /**
+     * Devuelve los pasos para fabricar el elemento
+     *
+     * @return string
+     */
+    public function metodoFabricacion():string{
+        return "Paso 1. Tallar, Paso2. Alisar";
+    }
+
+    /**
+     * Devuelve el método de reciclado que se debe aplicar al elemento según su fabricación
+     *
+     * @return string
+     */
+    public function metodoReciclado():string{
+        return "Paso 1 cortar, Paso 2 quemar";
+
+    }
+  
+
+
 }

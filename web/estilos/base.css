@@ -31,8 +31,13 @@ body {
 
 #fotoPuntoSeguro {
     padding-bottom: 10%;
-    height: 50px;
+    height: 40px;
     object-fit: contain;
+}
+
+#fotoPuntoSeguro #imagen{
+
+    height: 100px;
 }
 
 #cabecera #titulo {
@@ -115,4 +120,37 @@ body {
 
 .menu-desplegable:hover .menu-contenido {
     display: block;
+}
+
+#navegacion {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;     /* Centra los elementos verticalmente por si hay variaciones */
+    flex-wrap: wrap;         /* Permite que bajen de línea si la pantalla es muy pequeña */
+    gap: 8px;
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #edf2f7;
+}
+
+#navegacion a {
+    color: #4a5568;
+    background-color: transparent;
+    padding: 8px 14px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#navegacion a:hover {
+    background-color: #2b7a70;
+    color: #ffffff;
+}
+
+#mensajeError {
+    color:red;
 }

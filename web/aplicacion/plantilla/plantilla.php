@@ -2,6 +2,7 @@
 
 
 
+
 function paginaError($mensaje)
 {
   header("HTTP/1.0 404 $mensaje");
@@ -66,12 +67,21 @@ function inicioCuerpo(string $cabecera, array $ubicacion = [])
     <body>
         
         <div id="documento">
-            <div id="fotoPuntoSeguro" style="align-items: center;">
-                <a href="/index.php">
-                            <p>Voler a Inicio</p>
-                            <img  src="../../imagenes/moto.png" alt="puntSeguroMoto" style="height: 50px;">
+            <div id="fotoPuntoSeguro">
+                <a  href="/index.php">
+                            <img id="imagen" src="../../imagenes/moto.png" >
                 </a>
             </div>
+             <nav id="navegacion">
+               
+                    <a href="/aplicacion/pruebas/index.php">Pruebas</a>
+                    <a href="/aplicacion/relacion1/ejercicios.php">Relacion 1</a>
+                    <a href="/aplicacion/relacion2/ejercicios.php">Relacion 2</a>
+                    <a href="/aplicacion/relacion3/ejercicios.php">Relacion 3</a>
+                    <a href="/aplicacion/relacion4/ejercicios.php">Relacion 4</a>
+                    <a href="/aplicacion/relacion5/ejercicios.php">Relacion 5</a>
+                
+            </nav>
             <header>
                 <h1 id="titulo"><?php echo $cabecera;?></h1>
               
