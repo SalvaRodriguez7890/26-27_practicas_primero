@@ -150,3 +150,7 @@ body {
     background-color: #2b7a70;
     color: #ffffff;
 }
+
+#mensajeError {
+    color:red;
+}
