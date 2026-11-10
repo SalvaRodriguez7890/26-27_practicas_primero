@@ -34,9 +34,7 @@ function cabecera()
     <!--Comentario-->
 
     
-    <?php
-
-    
+    <?php    
 }
 
 //vista

@@ -117,7 +117,7 @@ function validaFecha(string &$var, string $defecto):bool {
     //el año es raro, porque si enviamos un 99, significa 1999 y no 2099,
     //por lo que asumiremos que las fechas que se meten en del año 2000 en adelante
     if(mb_strlen($anio) < 4){
-       $anio = "20".$anio;
+       $anio = "00".$anio;
     }
 
         //Con checkdate compreubo que la fecha sea correcta
