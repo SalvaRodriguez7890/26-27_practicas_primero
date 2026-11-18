@@ -1,4 +1,8 @@
 <?php
+include_once(dirname(__FILE__) . "/../../scripts/librerias/validacion.php");
+
+
+
 /**
  * Se tendrá la clase Punto (guardada en /scripts/clases) para guardar un punto con las siguientes
  * características:
@@ -23,7 +27,7 @@ class Punto {
 
     public const COLORES = [
         "brown" => ["nombre"=>"marron","rgb"=>[165, 42, 42]],
-        "lighgreen" => ["nombre"=>"verde claro","rgb"=>[144, 238, 144]],
+        "lightgreen" => ["nombre"=>"verde claro","rgb"=>[144, 238, 144]],
         "yellow" => ["nombre"=>"amarillo","rgb"=>[255,255, 0]],
         "pink" => ["nombre"=>"rosa","rgb"=>[255, 192, 203]],
         "darkblue" => ["nombre"=>"azul oscuro","rgb"=>[0, 0, 139]],
@@ -32,9 +36,9 @@ class Punto {
         "blue" => ["nombre"=>"azul","rgb"=>[0, 0, 255]]  
                             ];
     public const GROSORES = [
-                            "1"=>"fino",
-                            "2"=>"medio",
-                            "3"=>"grueso" 
+                            1=>"fino",
+                            2=>"medio",
+                            3=>"grueso" 
                             ];
 
     private int $_x;
@@ -42,6 +46,37 @@ class Punto {
     private string $_color;
     private int $_grosor;
 
+    /**
+     * Constructor de la clase Puto
+     */
+    public function __construct(int $ejeX, int $ejeY, string $color, int $grosor) {
+       
+        //compruebo el ejex
+        if (!$this->setX($ejeX)) {
+            throw new Exception("Valor del Eje X incorrecto");
+        }
+        //compruebo el ejey
+        if (!$this->setY($ejeY)) {
+            throw new Exception("Valor del Eje Y incorrecto");
+        }
+        //Compruebo color
+        if (!$this->setColor($color)) {
+            throw new Exception("El color no existe");
+        }
+        //Compruebo grosor
+        if (!$this->setGrosor($grosor)) {
+            throw new Exception("El grosor no existe");
+        }
+    }
+
+
+    /**
+     * Método mágico __set: se ejecuta al asignar una propiedad que no existe
+     * o no es accesible. Lanzo una excepción para impedir propiedades dinámicas.
+     */
+    public function __set(string $nombre, $valor): void {
+        throw new \Exception("No se pueden crear propiedades dinámicas en la clase " . self::class . ": $nombre");
+    }
 
     /* GETTERS  y SETTERS */
 
@@ -50,14 +85,11 @@ class Punto {
     }
 
     public function setX(int $X): bool {
-       //con la libreria VALFINAL VALIDO el numero entero entre 0 y 20000
-
-       if(!VALFINAL){
-        
-       }
-    
-    
-    
+       
+        //con la libreria VALFINAL VALIDO el numero entero entre 0 y 20000
+       if(!\VALFINAL\validaEntero($X, 0, 20000, 0)){
+        return false;
+       }   
         $this->_x = $X;
         return true;
     }
@@ -67,6 +99,11 @@ class Punto {
     }
 
     public function setY(int $Y): bool {
+
+        //con la libreria VALFINAL VALIDO el numero entero entre 0 y 20000
+       if(!\VALFINAL\validaEntero($Y, 0, 20000, 0)){
+        return false;
+       }   
         $this->_y = $Y;
         return true;
     }
@@ -76,6 +113,13 @@ class Punto {
     }
 
     public function setGrosor(int $grosor): bool {
+       //el grosor lo compruebo igual que con el color, comprobando si xiste el parametro grosor
+       // dentro del array de grosores
+
+        if(!array_key_exists($grosor, self::GROSORES)){
+            return false;
+        }
+
         $this->_grosor = $grosor;
         return true;
     }
@@ -85,8 +129,14 @@ class Punto {
     }
 
     public function setColor(string $color): bool {
+        //voy a usar el array_key_exists, al que le paso el color y el array de la constante COLORES
+        //la cual voy a comparar el color (en ingles) a ver si existe dentro del array 
+        //uso self:: para referime a la propiead colores
+        if(!array_key_exists($color, self::COLORES)){
+            return false; //si no está devuelvo false
+        }
         $this->_color = $color;
-        return false;
+        return true;
     }
 
 

@@ -154,3 +154,19 @@ body {
 #mensajeError {
     color:red;
 }
+
+.mensajeError {
+    color: #9b1c1c;
+    background-color: #fdecec;
+    border: 1px solid #f5c2c2;
+    border-left: 5px solid #e53e3e;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 8px 0;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
