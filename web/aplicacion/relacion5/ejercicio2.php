@@ -1,6 +1,6 @@
 <?php
 include_once(dirname(__FILE__) . "/../../cabecera.php");
-include_once(dirname(__FILE__) . "/../../scripts/librerias/validacion.php");
+require_once(dirname(__FILE__) . "/../../scripts/librerias/validacion.php");
 //controlador
 
 
@@ -16,7 +16,7 @@ $barraUbi = [
     ],
     [
         "TEXTO"=>"Ejercicio 2",
-        "ENLACE" =>"/aplicacion/relacion5/ejercicios2.php"
+        "ENLACE" =>"/aplicacion/relacion5/ejercicio2.php"
     ]
 ];
 
