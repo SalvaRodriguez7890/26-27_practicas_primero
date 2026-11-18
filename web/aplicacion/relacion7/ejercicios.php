@@ -43,8 +43,20 @@ function cuerpo()
 
   ?>
     
-    <p>Aquí aun no hay nada</p>
-   
+    <h1>INGRESA LAS COORDENADAS</h1>
+    <hr>
+    <br>
+
+    <form id="coordenadas" method="POST">
+        <label>Eje X:</label>
+        <input id="ejeX" type="text" name="ejeX">
+        <br>
+        <br>
+        <label>Eje Y:</label>
+        <input id="ejeY" type="text" name="ejeY"><br>
+        <br>
+        <input id="btnGuardar" type="submit" name="accion" value="guardar">
+    </form>
 
 
 
