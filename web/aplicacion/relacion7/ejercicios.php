@@ -62,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($errores)) {
             try {
                 $punto = new Punto($x, $y, $color, $grosor);
+                $arrayPuntos[] = $punto;
             } catch (Exception $e) {
                 $errores["general"] = "<p class='mensajeError'>" . $e->getMessage() . "</p>";
             }
@@ -85,7 +86,7 @@ inicioCabecera("APLICACION PRIMER TRIMESTRE");
 cabecera();
 finCabecera();
 inicioCuerpo("Relacion de Ejercicios 7", $barraUbi);
-cuerpo($errores, $punto);  //llamo a la vista
+cuerpo($errores, $punto, $arrayPuntos);  //llamo a la vista
 finCuerpo();
 // **********************************************************
 
@@ -96,12 +97,12 @@ function cabecera()
 }
 
 //vista
-function cuerpo(array $errores, mixed $punto)
+function cuerpo(array $errores, mixed $punto, array $arrayPuntos)
 {
 
 if($punto != null){
-    echo "Se ha creado el punto correctamente".PHP_EOL;
-}else{
+    echo "Se ha creado el punto correctamente y se añadido al \$arrayPuntos".PHP_EOL;
+}
 
   ?>
     
@@ -177,5 +178,5 @@ if($punto != null){
 }
 
 
-}
+
 
