@@ -173,6 +173,46 @@ if($punto != null){
         <br>
         <input id="btnGuardar" type="submit" name="accion" value="Guardar">
     </form>
+    <br>
+    <hr>
+    <br>
+    <div>
+        <textarea id="textAreaPuntos" cols="50" rows="25">
+             <?php 
+            if(count($arrayPuntos)>0){
+                $cont = 0;
+                for($i = 0 ; $i<count($arrayPuntos) ; $i++){
+                    $cont = $i+1;
+                    echo "Punto $cont : " .$arrayPuntos[$i]->toString().PHP_EOL;
+                    echo "\n".PHP_EOL;
+                }
+
+            }
+            
+            ?>
+        </textarea>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 
 }

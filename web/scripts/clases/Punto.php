@@ -139,6 +139,15 @@ class Punto {
         return true;
     }
 
+    /**
+     * To String para mostrar algo del punto
+     *
+     * @return string
+     */
+    public function toString():string {
+
+       return "Ejex: ". $this->getX() . " EjeY: " . $this->getY() . " Color: " . $this->getColor();
+    }
 
 
 
