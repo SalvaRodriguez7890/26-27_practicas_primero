@@ -37,7 +37,8 @@ function cuerpo()
                     <li><a href="/aplicacion/pruebas/Clases.php">Pruebas Clases</a></li>
                     <li><a href="/aplicacion/pruebas/pagformulario.php">Pruebas Formulario</a></li>
                     <li><a href="/aplicacion/pruebas/pruebaficheros.php">Pruebas Ficheros </a></li>
-                    
+                    <li><a href="/aplicacion/pruebas/pruebaImagen.php">Pruebas Imagen </a></li>
+                    <li><a href="/aplicacion/pruebas/pruebaCookies.php">Pruebas Cookies </a></li>
                   
                 </lu>
 

@@ -72,14 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
 }
 
-
-
-
-
-
-
-
-$usuario=getenv("MYSQL_USER");
+00$usuario=getenv("MYSQL_USER");
 
 //dibuja la plantilla de la vista
 inicioCabecera("APLICACION PRIMER TRIMESTRE");
@@ -180,11 +173,11 @@ if($punto != null){
         <textarea id="textAreaPuntos" cols="50" rows="25">
              <?php 
             if(count($arrayPuntos)>0){
-                $cont = 0;
+                
                 for($i = 0 ; $i<count($arrayPuntos) ; $i++){
-                    $cont = $i+1;
-                    echo "Punto $cont : " .$arrayPuntos[$i]->toString().PHP_EOL;
-                    echo "\n".PHP_EOL;
+                    
+                    echo  $arrayPuntos[$i]->toString().PHP_EOL;
+                  
                 }
 
             }

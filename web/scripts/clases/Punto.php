@@ -146,7 +146,7 @@ class Punto {
      */
     public function toString():string {
 
-       return "Ejex: ". $this->getX() . " EjeY: " . $this->getY() . " Color: " . $this->getColor();
+       return  $this->getX() . " ; ". $this->getY(). " ; ". $this->getColor(). " ; ". $this->getGrosor();
     }
 
 
