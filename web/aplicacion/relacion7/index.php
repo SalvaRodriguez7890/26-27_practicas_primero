@@ -347,7 +347,7 @@ function cuerpo(array $errores,  array $arrayPuntos, array $valores, string $men
             ?>
         
         <br>
-        <input id="btnGuardar" type="submit" name="accion" value="Guardar">
+        <input id="btnGuardar" class="boton" type="submit" name="accion" value="Guardar">
     </form>
     <br>
     <hr>
@@ -408,7 +408,7 @@ function cuerpo(array $errores,  array $arrayPuntos, array $valores, string $men
             ?>
         </select>
         
-        <input id="btnBorrar" type="submit" name="accion" value="borrar">
+        <input id="btnBorrar" class="boton" type="submit" name="accion" value="borrar">
 
         <?php 
             } else { //si no pues digo que no hay puntos
@@ -433,11 +433,11 @@ function cuerpo(array $errores,  array $arrayPuntos, array $valores, string $men
 
     <h2>SUBIR FICHERO DE PUNTOS</h2>
     <!-- enctype="multipart/form-data" es obligatorio para poder enviar ficheros -->
-    <form id="subir" method="POST" action="/aplicacion/relacion7/index.php" enctype="multipart/form-data">
+    <form id="subir"  method="POST" action="/aplicacion/relacion7/index.php" enctype="multipart/form-data">
         <!-- le meto un tamaño de 2mb -->
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
         <input type="file" name="fichero" accept=".txt,text/plain">
-        <input type="submit" name="accion" value="Subir">
+        <input type="submit" class="boton" name="accion" value="Subir">
         <p>Formato de cada linea: <b>x ; y ; color ; grosor</b></p>
         <?php
             if(isset($errores["fichero"])){ //si hay algun error
