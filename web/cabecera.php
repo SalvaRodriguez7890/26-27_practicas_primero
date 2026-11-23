@@ -24,8 +24,17 @@ spl_autoload_register(function ($clase){
         }
 });
 
+
 include(RUTABASE."/aplicacion/plantilla/plantilla.php");
 
 //creo todos los objetos que necesita mi aplicación
 
-$arrayPuntos = [];
+//Cargo mi libreria en la cabecera para que sea accesible desde todos lados
+include_once(RUTABASE."/scripts/librerias/puntos.php");
+
+//Cargo el array con la funcion
+$arrayPuntos = cargarPuntos();
+
+if (!file_exists(rutaImagenPuntos())) {
+    guardarImagenPuntos($arrayPuntos);
+}

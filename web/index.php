@@ -59,7 +59,7 @@ function cuerpo()
                     <br>
                     <li><a href="/aplicacion/relacion5/ejercicios.php">Acceso a ejercicios Relacion 5</a></li>
                     <br>
-                    <li><a href="/aplicacion/relacion7/ejercicios.php">Acceso a ejercicios Relacion 7</a></li>
+                    <li><a href="/aplicacion/relacion7/index.php">Acceso a ejercicios Relacion 7</a></li>
                     <br>
                     <li><a href="/aplicacion/expresionesRegulares/expresiones.php">Acceso a Expresiones Regularses (Ejemplos)</a></li>
                 </lu>
