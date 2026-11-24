@@ -210,7 +210,8 @@ function crearImagenGD(array $puntos): GdImage|false {
     //para luego en vez de x sean circulos
     $diametros = [1 => 4, 
                   2 => 8, 
-                  3 => 12];
+                  3 => 12,
+                  4 => 15];
 
     //Voy dibujando los puntos dentro de la imagen
     foreach ($puntos as $punto) {

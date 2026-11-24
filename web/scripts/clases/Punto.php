@@ -38,7 +38,8 @@ class Punto {
     public const GROSORES = [
                             1=>"fino",
                             2=>"medio",
-                            3=>"grueso" 
+                            3=>"grueso",
+                            4=>"muy grueso"
                             ];
 
     private int $_x;

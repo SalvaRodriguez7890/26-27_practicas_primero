@@ -27,6 +27,9 @@ spl_autoload_register(function ($clase){
 
 include(RUTABASE."/aplicacion/plantilla/plantilla.php");
 
+//Cargo mi libreria en la cabecera para que sea accesible desde todos lados
+include_once(RUTABASE."/scripts/librerias/validacion.php");
+
 //creo todos los objetos que necesita mi aplicación
 
 //Cargo mi libreria en la cabecera para que sea accesible desde todos lados
